@@ -5,7 +5,7 @@
 
 ## Minimum Viable Product
 
-Think Piece is a website for people to share their ideas and thoughts with others. This app is built with a Ruby on Rails backend, and a React/Redux frontend to look and feel like the popular blogging site [Medium](https://medium.com). At the end of two weeks Think Piece will have the following bug free features:
+Think Piece is a website for people to share their ideas and thoughts with others. This app is built with a Ruby on Rails backend, and a React/Redux front-end to look and feel like the popular blogging site [Medium](https://medium.com). At the end of two weeks Think Piece will have the following bug free features:
 
 - [ ] Hosting on Heroku
 - [ ] Account Creation, Login, and Demo login
@@ -18,10 +18,10 @@ Think Piece is a website for people to share their ideas and thoughts with other
 ## Design Docs
 
 - [Wireframes]()
-- [React Components]()
-- [API enpoints]()
-- [Database Schema]()
-- [Sample Application State]()
+- [React Components](https://github.com/Gabriel-Lewis/ThinkPiece/blob/master/docs/component-hierarchy.md)
+- [API endpoints](https://github.com/Gabriel-Lewis/ThinkPiece/blob/master/docs/api-endpoints.md)
+- [Database Schema](https://github.com/Gabriel-Lewis/ThinkPiece/blob/master/docs/schema.md)
+- [Sample Application State](https://github.com/Gabriel-Lewis/ThinkPiece/blob/master/docs/sample-state.md)
 
 ## Timeline
 
@@ -39,8 +39,7 @@ Think Piece is a website for people to share their ideas and thoughts with other
 **Objective:** Enable rich text editing of stories, with pictures
 
 ## Bonus Features
-- [ ] Categories
-- [ ] Tags
+- [ ] Topics
 - [ ] Bookmarking Stories
 - [ ] Stats on Personal Stories
 - [ ] Publications
