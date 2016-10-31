@@ -17,7 +17,7 @@ Think Piece is a website for people to share their ideas and thoughts with other
 
 ## Design Docs
 
-- [Wireframes]()
+- [Wireframes](https://github.com/Gabriel-Lewis/ThinkPiece/tree/master/docs/wireframes)
 - [React Components](https://github.com/Gabriel-Lewis/ThinkPiece/blob/master/docs/component-hierarchy.md)
 - [API endpoints](https://github.com/Gabriel-Lewis/ThinkPiece/blob/master/docs/api-endpoints.md)
 - [Database Schema](https://github.com/Gabriel-Lewis/ThinkPiece/blob/master/docs/schema.md)
