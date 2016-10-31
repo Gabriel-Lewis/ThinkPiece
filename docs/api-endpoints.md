@@ -20,7 +20,7 @@
 
 ### Session
 
-- `POST /api/session` 
+- `POST /api/session`
 - `DELETE /api/session`
 - `GET /api/session`
 
@@ -40,7 +40,17 @@
 - A stories's topics will be included in the story show template
 - `GET /api/topics`
   - includes query param for typeahead suggestions
-- `POST /api/stories/:story_id/topics`: add tag to note by name
+- `POST /api/stories/:story_id/topics`: add topic to a story
   - if story doesn't already exist, it will be created
 - `DELETE /api/stories/:story_id/topics/:topic_name`: remove topic from story by
   name
+
+### Stories
+
+- `GET /api/comments`
+- Stories index/search
+- accepts `topic_name` query param to list stories by topic
+- `POST /api/comments`
+- `GET /api/stories/:story_id/comments/:comment_id`
+- `PATCH /api/stories/:story_id/comments/:comment_id`
+- `DELETE /api/stories/:story_id/comments/:comment_id`

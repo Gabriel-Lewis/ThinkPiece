@@ -27,6 +27,11 @@
  - NewStory
   - NewStoryButton
 
+**NewCommentContainer**
+ - NewComment
+ - NewCommentButton
+
+
 **Search**
 
 **UserContainer**
@@ -49,7 +54,6 @@
 | "/new-story" | "NewStoryContainer" |
 | "/new-comment" | "NewCommentContainer" |
 | "/search" | "Search" |
-| "/new-notebook" | "NewNotebook" |
 | "/new-topic" | "NewTopic" |
 | "/topic-search" | "TopicSearch" |
 | "/user-search" | "UserSearch" |
