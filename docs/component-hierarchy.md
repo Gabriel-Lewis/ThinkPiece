@@ -21,7 +21,6 @@
 
 **StoryIndex**
  - StoryIndexItem
-  + StoryDetails
 
 **NewStoryContainer**
  - NewStory
@@ -49,11 +48,10 @@
 | "/sign-in" | "AuthFormContainer" |
 | "/home" | "HomeContainer" |
 | "/home/stories/:storyId" | "StoryContainer" |
-| "/home/topic/:topicId/story/:storyId" | "StoryContainer" |
 | "/home/search-results" | "SearchResultsContainer"
 | "/new-story" | "NewStoryContainer" |
 | "/new-comment" | "NewCommentContainer" |
 | "/search" | "Search" |
-| "/new-topic" | "NewTopic" |
+| "stories/:story_id/new-topic" | "NewTopic" |
 | "/topic-search" | "TopicSearch" |
 | "/user-search" | "UserSearch" |

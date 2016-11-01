@@ -15,12 +15,10 @@
       title: "Sample State",
       body: "is useful to plan",
       author_id: 1,
-      topics: {
-        1: {
-          id: 1
-          name: "Thinking"
-        }
-      },
+      topics: [
+        'thinking',
+        'other_stuff'
+      ],
     comments: {
       1: {
         title: "This story is great!",
@@ -31,7 +29,7 @@
     }  
     }
   },
-  followers: {
+  following: {
     1: {
       follower_id: 1,
       following_id: 4
@@ -43,6 +41,5 @@
       story_id: 1
     }
   },
-  topicFilters: [1, 7, 14] // Used to track selected Topics for filtering of stories
 }
 ```
