@@ -1,10 +1,10 @@
-
 {
   "name": "thinkpiece",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
   "directories": {
+    "doc": "docs",
     "test": "test"
   },
   "dependencies": {
@@ -22,15 +22,21 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "webpack"
   },
   "engines": {
     "node": "6.7.0",
     "npm": "3.10.7"
   },
-  "scripts": {
-    "postinstall": "./node_modules/.bin/webpack"
-  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabriel-Lewis/ThinkPiece.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Gabriel-Lewis/ThinkPiece/issues"
+  },
+  "homepage": "https://github.com/Gabriel-Lewis/ThinkPiece#readme"
 }
