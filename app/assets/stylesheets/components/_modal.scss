@@ -1,0 +1,70 @@
+.modal-close {
+  font-family: "Helvetica Neue",sans-serif;
+  font-weight: 300;
+  font-size: 32px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  right: 0;
+  top: 0;
+  font-style: normal;
+}
+
+.modal-title {
+  background-color: $light-gray;
+  text-align: center;
+  width: 100%;
+  top:0px;
+  padding: 20px;
+  font-family: "Helvetica Neue",sans-serif;
+}
+
+.login-form-box label {
+  color: $dark-gray;
+  font-family: "Helvetica Neue",sans-serif;
+}
+
+.login-form-box label input {
+  font-size: 18px;
+  height: 40px;
+  margin: 10px auto;
+  overflow: hidden;
+  // padding: 7px;
+  width: 440px;
+  white-space: nowrap;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  letter-spacing: 0;
+  font-weight: 300;
+  font-style: normal;
+  border: 0;
+  border-bottom: 1px solid rgba(0,0,0,.15);
+  border-radius: 0;
+}
+.modal-form {
+  padding:0 32px 0;
+  font-family: "Helvetica Neue",sans-serif;
+}
+
+.sign-in-button {
+  border: 1px solid $medium-green;
+  color: $medium-green-text;
+  padding: 10px;
+  margin: 10px auto;
+  width: 100%;
+  border-radius: 3px;
+  text-align: center;
+}
+.sign-in-button:hover {
+  background-color: $light-gray;
+}
+
+.session-form-toggle {
+  color: rgba(0,0,0,.44);
+  cursor: pointer;
+}
+.session-form-toggle:hover {
+  text-decoration: underline;
+  color: $dark-gray;
+}

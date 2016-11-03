@@ -1,0 +1,33 @@
+.header {
+  background-color: white;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 2px -2px $box-shadow-gray;
+}
+
+.header h1 {
+  padding: 10px;
+  color: black;
+  font-size: 40px;
+}
+
+.header button {
+  text-decoration: none;
+  font-family:'Helvetica Neue';
+  color: #02b875;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+}
+
+.header input {
+
+}
+
+.header nav {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
