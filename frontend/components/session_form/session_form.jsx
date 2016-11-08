@@ -12,12 +12,11 @@ class SessionForm extends React.Component {
     };
     this.toggleFormType = this.toggleFormType.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.guestLoginIn = this.guestLoginIn.bind(this);
   }
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.close()
     if (this.state.formType === 'signIn') {
       this.props.login({user});
     } else {
@@ -40,15 +39,41 @@ class SessionForm extends React.Component {
     }
   }
 
+  guestLoginIn() {
+    const user = {username:'guest', password:'password'}
+    this.props.login({user})
+  }
+
+  guestLoginInButton() {
+    return (
+      <button
+        className='session-form-toggle'
+        onClick={this.guestLoginIn}
+        >Guest</button>
+    );
+  }
+
+  renderErrors () {
+    return (
+      <ul className='form-errors'>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>{error}</li> ))}
+      </ul>
+    );
+  }
+
   signInForm () {
     return(
       <div className="login-form-box">
         <div className='modal-title'>
-          <h3>Thinkpiece</h3>
+          <h3 className='logo'>Thinkpiece</h3>
         </div>
+
         <div className='modal-form'>
         <h3>Sign In</h3>
+        {this.renderErrors()}
         <form onSubmit={this.handleSubmit} >
+          <div className='form-inputs'>
           <label> Username
             <input
               type="text"
@@ -67,12 +92,14 @@ class SessionForm extends React.Component {
               className='login-input'
             /><br />
           </label>
+          </div>
           <input className='sign-in-button' type="submit"/>
         </form>
         <p>Don't have an account? <button
             className='session-form-toggle'
             onClick={this.toggleFormType}
-          >Sign Up</button></p>
+          >Sign Up</button> or login as a {this.guestLoginInButton()} </p>
+
         </div>
       </div>
     )
@@ -82,11 +109,13 @@ class SessionForm extends React.Component {
     return(
       <div>
         <div className='modal-title'>
-          <h3>Thinkpiece</h3>
+          <h3 className='logo'>Thinkpiece</h3>
         </div>
         <div className='modal-form'>
         <h3>Sign Up</h3>
+        {this.renderErrors()}
         <form onSubmit={this.handleSubmit} className="login-form-box">
+          <div className='form-inputs'>
           <label> Email
             <input
               placeholder='yourname@email.com'
@@ -114,6 +143,7 @@ class SessionForm extends React.Component {
               className='login-input'
             /><br />
           </label>
+        </div>
           <input className='sign-in-button' type="submit"/>
         </form>
         <p>Already have an account? <button

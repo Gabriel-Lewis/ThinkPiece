@@ -1,0 +1,35 @@
+.story {
+  margin: auto;
+  margin-top: 100px;
+  width: 50%;
+  max-width: 740px;
+  background-color: white;
+}
+
+.story span {
+  margin-top: 10px;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.58;
+  letter-spacing: -.003em;
+  text-align: left;
+  white-space: pre-wrap;
+
+}
+
+.story-title {
+  color: rgba(0,0,0,0.8);
+  font-size: 40px;
+  line-height: 1.04;
+  letter-spacing: -.028em;
+  text-align: left;
+  margin-bottom: 40px;
+  margin-left: 30px
+}
+
+.story-options {
+  position: absolute;
+  color: black;
+  top: 100px;
+  right: 30%;
+}

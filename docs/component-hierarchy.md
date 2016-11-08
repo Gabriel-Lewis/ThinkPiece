@@ -20,7 +20,7 @@
     + UserDetails
 
 **StoryIndex**
- - StoryIndexItem
+ - StoryFeedItem
 
 **NewStoryContainer**
  - NewStory
@@ -46,9 +46,9 @@
 |-------|-------------|
 | "/sign-up" | "AuthFormContainer" |
 | "/sign-in" | "AuthFormContainer" |
-| "/home" | "HomeContainer" |
-| "/home/stories/:storyId" | "StoryContainer" |
-| "/home/search-results" | "SearchResultsContainer"
+| "/" | "App" |
+| "/stories/:storyId" | "StoryContainer" |
+| "/search-results" | "SearchResultsContainer"
 | "/new-story" | "NewStoryContainer" |
 | "/new-comment" | "NewCommentContainer" |
 | "/search" | "Search" |

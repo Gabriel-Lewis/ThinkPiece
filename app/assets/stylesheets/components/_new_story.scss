@@ -1,0 +1,23 @@
+.new-story {
+  margin: auto;
+  width: 50%;
+  background-color: white;
+  display:block;
+  position: relative;
+  margin-top: 100px;
+}
+
+.new-story:before, .header:after {
+  display: table;
+  content: " ";
+}
+.new-story:after {
+  clear: both;
+}
+
+.new-story-title {
+  font-weight: 700;
+  font-size: 40px;
+  margin-left: 30px;
+  font-family: 'Avenir';
+}

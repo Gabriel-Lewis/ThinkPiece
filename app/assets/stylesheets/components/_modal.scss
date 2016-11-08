@@ -10,19 +10,24 @@
   right: 0;
   top: 0;
   font-style: normal;
+  position: fixed;
 }
 
 .modal-title {
   background-color: $light-gray;
   text-align: center;
-  width: 100%;
+
   top:0px;
   padding: 20px;
   font-family: "Helvetica Neue",sans-serif;
 }
 
+.form-inputs {
+  text-align: left;
+}
+
 .login-form-box label {
-  color: $dark-gray;
+  color: $overlay-gray;
   font-family: "Helvetica Neue",sans-serif;
 }
 
@@ -31,7 +36,7 @@
   height: 40px;
   margin: 10px auto;
   overflow: hidden;
-  // padding: 7px;
+  padding: 7px;
   width: 440px;
   white-space: nowrap;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
@@ -51,10 +56,9 @@
   border: 1px solid $medium-green;
   color: $medium-green-text;
   padding: 10px;
+  width: 90%;
   margin: 10px auto;
-  width: 100%;
   border-radius: 3px;
-  text-align: center;
 }
 .sign-in-button:hover {
   background-color: $light-gray;
@@ -66,5 +70,99 @@
 }
 .session-form-toggle:hover {
   text-decoration: underline;
-  color: $dark-gray;
+  color: $overlay-gray;
+}
+
+.form-errors {
+  color: red;
+}
+
+.overlay:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -.25em;
+}
+
+.overlay {
+    position: fixed;
+    overflow: auto;
+    text-align: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    z-index: 900;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color : rgba(0,0,0,.6);
+}
+
+.modal {
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.44);
+    padding: 0;
+    vertical-align   : middle;
+    max-width: 520px;
+    min-height: 580px;
+    border          : none;
+    background-color : white;
+    padding         : 0;
+    overflow: hidden;
+}
+
+
+.publish-modal {
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow:0 1px 2px rgba(0,0,0,.25),0 0 1px rgba(0,0,0,.35);
+  vertical-align: middle;
+  padding: 20px;
+  min-width: 220px;
+  max-width: 280px;
+  border: none;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  left: 30%;
+  top: 70px;
+}
+
+.no-overlay {
+    position: fixed;
+    overflow: auto;
+    text-align: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    z-index: 900;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color:transparent;
+}
+
+.publish-story-button {
+  color: $medium-green;
+  border: $medium-green 1px solid;
+  border-radius: 999em;
+  font-size: 14px;
+  padding: 0 18px;
+  line-height: 35px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-weight: 400;
+}
+
+.img-upload-form input {
+
 }

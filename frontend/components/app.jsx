@@ -1,9 +1,9 @@
 import React from 'react';
 import HeaderContainer from './header/header_container'
-
-const App = ({ children }) => (
+import {withRouter} from 'react-router'
+const App = ({children, location}) => (
   <div>
-    <HeaderContainer />
+    <HeaderContainer location={location} />
     {children}
   </div>
 );
