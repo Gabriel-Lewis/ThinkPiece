@@ -70,10 +70,12 @@ img {
 
 
 /* Clearfix */
+.group:before, .group:after{
+  content: "";
+  display: table;
+}
 
 .group:after {
-  content: "";
-  display: block;
   clear: both;
 }
 

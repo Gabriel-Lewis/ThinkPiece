@@ -40,3 +40,11 @@ export const fetchStories = success => {
     success: success
   });
 };
+
+export const searchStories = (query, success) => {
+  $.ajax({
+    url: `/api/stories/search`,
+    data: {search: query},
+    success: success
+  });
+};

@@ -28,6 +28,11 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def search
+    @users = User.where("name ILIKE ?", "%#{params[:search]}%")
+    render 'api/users/index'
+  end
+
   private
   def user_params
     params.require(:user).permit(:id, :name, :profile_image_url, :username, :password, :email, :bio)

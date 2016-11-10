@@ -47,7 +47,7 @@ class UserProfile extends React.Component {
 
 
   userProfileButtons() {
-    if (this.props.user) {
+    if (this.props.user && this.props.currentUser) {
       if (this.props.user.id === this.props.currentUser.id) {
         return (<UserProfileEditModal currentUser={this.props.currentUser} updateUser={this.props.updateUser} />)
       } else if (this.props.following) {

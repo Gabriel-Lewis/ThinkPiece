@@ -1,3 +1,4 @@
+
 class Api::StoriesController < ApplicationController
   def index
     if current_user
@@ -40,6 +41,11 @@ class Api::StoriesController < ApplicationController
     else
       render json: @story.errors.full_messages, status: 422
     end
+  end
+
+  def search
+    @stories = Story.where("title ILIKE ?", "%#{params[:search]}%")
+    render 'api/stories/index'
   end
 
   private

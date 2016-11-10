@@ -33,3 +33,11 @@ export const unfollowUser = (id, success) => {
     success: success
   })
 }
+
+export const searchUsers = (query, success) => {
+  $.ajax({
+    url: `/api/users/search`,
+    data: {search: query},
+    success: success
+  });
+};

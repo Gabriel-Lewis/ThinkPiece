@@ -2,6 +2,8 @@ import React from 'react';
 import Modal from 'react-modal';
 import SessionFormContainer from '../session_form/session_form_container';
 import SettingsModal from './settings_modal';
+import SearchBar from '../search/search_bar';
+
 import { Link, withRouter, Router, hashHistory } from 'react-router';
 
 class Header extends React.Component {
@@ -36,7 +38,6 @@ class Header extends React.Component {
             <button
               onClick={this.handleClick}
               >Sign In / Sign Up</button>
-
               <Modal
                 className='modal'
                 overlayClassName='overlay'
@@ -60,9 +61,9 @@ class Header extends React.Component {
           <nav>
             <Link to='/'><h3 className='logo'>Thinkpiece</h3></Link>
             <div className='header-settings'>
-            <Link className='medium-green-button' to='/new-story'>Write a story</Link>
-            <SettingsModal handleLogout={this.handleLogout} currentUser={this.props.currentUser}/>
-
+              <Link className='medium-green-button' to='/new-story'>Write a story</Link>
+              <SearchBar />
+              <SettingsModal handleLogout={this.handleLogout} currentUser={this.props.currentUser}/>
             </div>
           </nav>
         </div>

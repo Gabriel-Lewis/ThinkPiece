@@ -1,7 +1,7 @@
 .story {
   margin: auto;
   margin-top: 100px;
-  width: 50%;
+  width: 60%;
   max-width: 740px;
   background-color: white;
 }
@@ -17,6 +17,10 @@
 
 }
 
+figure.md-block-image figcaption {
+  display:none;
+}
+
 .story-title {
   color: rgba(0,0,0,0.8);
   font-size: 40px;
@@ -24,7 +28,7 @@
   letter-spacing: -.028em;
   text-align: left;
   margin-bottom: 40px;
-  margin-left: 30px
+  margin-left: 30px;
 }
 
 .story-options {
@@ -32,4 +36,26 @@
   color: black;
   top: 100px;
   right: 30%;
+}
+
+.author-header {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  font-size: 15px;
+}
+.author-header a {
+  display: flex;
+  align-items: center;
+}
+
+.author-header img {
+  height: 40px;
+  width: 40px;
+  float: left;
+  margin-right: 10px;
+}
+
+.author-header p {
+  float: left;
 }

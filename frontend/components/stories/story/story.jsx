@@ -36,18 +36,14 @@ class Story extends React.Component {
   }
 
   editLinkForAuthor() {
-    if (this.props.story !== {}) {
+    if (this.props.story !== {} && this.props.currentUser) {
       if (this.props.story.user.id === this.props.currentUser.id) {
         return (
           <div className='story-options'>
           <Link to={`stories/${this.props.story.id}/edit`}>Edit</Link>
-          
+
           </div>
         );
-      } else {
-        return (
-          <p>nothing</p>
-        )
       }
     }
   }
@@ -56,13 +52,19 @@ class Story extends React.Component {
 
     const { editorState } = this.state;
     const story = this.props.story;
+
     if (!story) {
         return <p>Loading</p>
     }
     return (
       <div className='story'>
-        <Link to={`users/${story.user.id}`}><h3>{story.user.username}</h3></Link>
-
+        <div className='author-header'>
+        <Link to={`users/${story.user.id}`}>
+          <img
+            className='user-image'
+            src={story.user.profile_image_url}
+            /> <p>{story.user.name}</p></Link>
+        </div>
         <h3
           className='story-title'
           >{story.title}</h3>

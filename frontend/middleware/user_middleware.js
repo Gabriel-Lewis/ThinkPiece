@@ -40,7 +40,6 @@ const UserMiddleware = ({getState, dispatch}) => next => action => {
       fetchUsers(receiveAllUsersSuccess);
       return next(action);
     case UPDATE_USER:
-      debugger
       updateUser(action.user, receiveUserSuccess)
       return next(action);
     case FOLLOW_USER:
