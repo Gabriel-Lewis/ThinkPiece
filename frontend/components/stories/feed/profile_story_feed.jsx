@@ -1,25 +1,24 @@
 import React from 'react';
 import StoryFeedItem from './story_feed_item';
 import {withRouter} from 'react-router'
+import HeaderContainer from '../../header/header_container'
 
-class StoryIndex extends React.Component {
+class ProfileStoryFeed extends React.Component {
   componentDidMount() {
-    this.props.fetchStories();
   }
 
   render() {
     return (
 
-      <div className='background'>
+      <div className='profile-background'>
         <ul className='story-feed'>
           {
             this.props.stories.map(story => (
               <StoryFeedItem
                 key={story.id}
-                user={story.user}
+                user={this.props.user}
                 story={story}
-              />
-
+                />
             ))
           }
         </ul>
@@ -28,4 +27,4 @@ class StoryIndex extends React.Component {
   }
 }
 
-export default withRouter(StoryIndex);
+export default withRouter(ProfileStoryFeed);

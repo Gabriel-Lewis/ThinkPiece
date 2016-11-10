@@ -12,6 +12,14 @@
   position: absolute;
 }
 
+.profile-background {
+  background-color: $white-smoke;
+  position:absolute;;
+  left:0;
+  right:0;
+  padding-top: 2px;
+}
+
 .story-index-item {
   margin-bottom: 10px;
   border-radius: 3px;
@@ -24,6 +32,7 @@
   max-width: 660px;
   border: 1px solid rgba(0,0,0,.09);
 }
+
 
 .story-index-item img {
   transition: visibility 0s linear 0s,opacity .4s 0s;

@@ -14,6 +14,8 @@
     box-shadow:0 2px 2px -2px $box-shadow-gray;
     background: rgba(255,255,255,.97)!important;
     position: fixed;
+    align-items: center;
+
 }
 
 .header:before, .header:after {
@@ -32,7 +34,6 @@
   background-color: transparent;
 }
 .header .medium-green-button {
-  padding-top: 25px;
   text-decoration: none;
   display: inline-block;
   font-family:'Helvetica Neue';
@@ -47,10 +48,12 @@
   width: 70%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header-settings {
   width: 25%;
   display: flex;
+  align-items: center;
   justify-content: space-around;
 }

@@ -6,6 +6,7 @@ class StoryFeedItem extends React.Component {
   constructor(props) {
     super(props)
     this.story = props.story;
+    this.user = props.user;
     this.mainImgBlock = this.mainImgBlock.bind(this)
   }
 
@@ -22,9 +23,9 @@ class StoryFeedItem extends React.Component {
     return (
     <li className='story-index-item'>
       <div className='story-author-link'>
-        <Link className to={`users/${this.story.user.id}`} >
-          <img className='feed-profile-image user-image' src={this.story.user.profile_image_url} />
-          {this.story.user.name}
+        <Link className to={`users/${this.story.user_id}`} >
+          <img className='feed-profile-image user-image' src={this.user.profile_image_url} />
+          {this.user.name}
         </Link>
       </div>
       <Link to={`/stories/${this.story.id}`}>

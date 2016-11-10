@@ -8,12 +8,21 @@ const defaultUser = {
   follows: null,
   followed: false
 };
+const _nullUser = Object.freeze({
+  currentUser: null,
+  errors: [],
+  followers: [],
+  following: [],
+  stories: []
+});
 
 
-const UserReducer = (oldState = {}, action) => {
+const UserReducer = (oldState = _nullUser, action) => {
   switch (action.type) {
     case RECEIVE_USER:
-      return merge({}, oldState, action.user);
+      // const followers = action.user.followers
+      // const following = action.user.following
+      return action.user;
     default:
       return oldState;
   }

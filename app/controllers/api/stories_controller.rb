@@ -1,6 +1,11 @@
 class Api::StoriesController < ApplicationController
   def index
-    @stories = Story.all
+    if current_user
+      followed_authors = current_user.following
+      @stories = Story.where(user: followed_authors)
+    else
+      @stories = Story.all
+    end
   end
 
   def show

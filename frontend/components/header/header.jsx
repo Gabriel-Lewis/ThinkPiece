@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
-import SessionFormContainer from '../session_form/session_form_container'
+import SessionFormContainer from '../session_form/session_form_container';
+import SettingsModal from './settings_modal';
 import { Link, withRouter, Router, hashHistory } from 'react-router';
 
 class Header extends React.Component {
@@ -60,7 +61,8 @@ class Header extends React.Component {
             <Link to='/'><h3 className='logo'>Thinkpiece</h3></Link>
             <div className='header-settings'>
             <Link className='medium-green-button' to='/new-story'>Write a story</Link>
-            <button onClick={this.handleLogout}>Logout</button>
+            <SettingsModal handleLogout={this.handleLogout} currentUser={this.props.currentUser}/>
+
             </div>
           </nav>
         </div>

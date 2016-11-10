@@ -1,4 +1,4 @@
-export const fetchUser = (id, success) => {
+ export const fetchUser = (id, success) => {
   $.ajax({
     url: `/api/users/${id}`,
     success: success,
@@ -16,12 +16,20 @@ export const updateUser = (user, success) => {
   })
 }
 
-export const followUser = (followed_id, success) => {
+export const followUser = (id, success) => {
   $.ajax({
-    url: '/api/follows',
+    url: '/api/follows/',
     method: 'POST',
-    data: { followed_id },
-    success: success,
-    error: () => {console.log("Error in UserApiUtil#followUser")}
+    data: { id },
+    success: success
+  })
+}
+
+export const unfollowUser = (id, success) => {
+  $.ajax({
+    url: `/api/follows/${id}`,
+    method: 'DELETE',
+    data: { id },
+    success: success
   })
 }

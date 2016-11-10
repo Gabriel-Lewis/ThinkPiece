@@ -41,7 +41,7 @@ class StoryForm extends React.Component {
     e.preventDefault();
     let body = JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()));
     this.props.updateStory({id: this.props.story.id, title: this.state.title, body: body, user_id:this.props.story.user_id, main_image_url: this.state.main_image_url}
-);
+    );
   }
 
   setBody() {

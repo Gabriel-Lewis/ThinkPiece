@@ -42,13 +42,14 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  # Follows a user.
   def follow(other_user)
     relationships.create(followed_id: other_user.id)
   end
 
   # Unfollows a user.
   def unfollow(other_user)
-    following.find_by(followed_id: other_user.id).destroy
+    relationships.find_by(followed_id: other_user.id).destroy
   end
 
   # Returns true if the current user is following the other user.

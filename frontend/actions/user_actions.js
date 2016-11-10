@@ -7,6 +7,7 @@ export const CREATE_USER = "CREATE_USER";
 export const UPDATE_USER = "UPDATE_USER";
 export const DELETE_USER = "DELETE_USER";
 export const FOLLOW_USER = "FOLLOW_USER";
+export const UNFOLLOW_USER = "UNFOLLOW_USER";
 
 
 export const fetchUsers = () => ({
@@ -50,5 +51,9 @@ export const removeUser = user => ({
 
 export const followUser = id => ({
   type: FOLLOW_USER,
+  id
+})
+export const unfollowUser = id => ({
+  type: UNFOLLOW_USER,
   id
 })

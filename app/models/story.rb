@@ -14,4 +14,8 @@
 class Story < ApplicationRecord
   validates :title, :user_id, presence: true
   belongs_to :user
+
+  def author
+    user_id
+  end
 end

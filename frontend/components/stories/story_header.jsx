@@ -1,6 +1,7 @@
 import React from 'react';
 import PublishStoryModal from './publish_story_modal';
 import { Link, withRouter, Router, hashHistory } from 'react-router';
+import SettingsModal from '../header/settings_modal';
 
 class storyHeader extends React.Component {
   constructor(props) {
@@ -25,9 +26,9 @@ class storyHeader extends React.Component {
           <nav>
             <Link to='/'><h3 className='logo'>Thinkpiece</h3></Link>
             <div className='header-settings'>
-              <button onClick={this.handleLogout}>Logout</button>
               <PublishStoryModal submitStory={this.props.submitStory} setMainImg={this.props.setMainImg}/>
               <div>{this.deleteButton()}</div>
+              <SettingsModal currentUser={this.props.currentUser} handleLogout={this.handleLogout} />
             </div>
           </nav>
         </div>
