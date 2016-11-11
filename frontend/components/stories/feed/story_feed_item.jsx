@@ -11,9 +11,6 @@ class StoryFeedItem extends React.Component {
     this.mainImgBlock = this.mainImgBlock.bind(this)
     this.handleLike = this.handleLike.bind(this)
     this.handleUnlike = this.handleUnlike.bind(this)
-    this.state = {
-      liked_users: props.story.liked_users.includes(props.currentUser.id)
-    }
   }
 
   mainImgBlock() {
@@ -34,13 +31,6 @@ class StoryFeedItem extends React.Component {
     this.props.createLike(id);
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      likeCount: nextProps.story.likeCount,
-      liked_users: nextProps.story.liked_users.includes(nextProps.currentUser.id)
-    })
-  }
-
   render() {
     return (
     <li className='story-index-item'>
@@ -57,7 +47,7 @@ class StoryFeedItem extends React.Component {
         <Link className='read-more-button' to={`/stories/${this.story.id}`}>
           Read more...
         </Link>
-        <StoryDetails unlike={this.handleUnlike} like={this.handleLike} liked={this.state.liked_users} likeCount={this.props.story.likeCount} />
+        <StoryDetails unlike={this.handleUnlike} like={this.handleLike} liked={this.props.story.liked } likeCount={this.props.story.likeCount} />
     </li>
   );
   }

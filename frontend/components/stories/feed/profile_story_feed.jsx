@@ -5,12 +5,12 @@ import HeaderContainer from '../../header/header_container'
 
 class ProfileStoryFeed extends React.Component {
   componentWillReceiveProps(nextProps) {
-    nextProps.fetchUsersStories(this.props.user.id);
+    // if (nextProps.stories !== {}) {
+      // nextProps.fetchUsersStories(this.props.user.id);
+    // }
+
   }
 
-  componentDidUpdate(prevProps, prevState) {
-
-  }
 
   render() {
     return (

@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-router';
 
-import { fetchStory } from '../actions/story_actions'
+import { fetchStory, fetchUsersStories } from '../actions/story_actions'
 import { fetchUser } from '../actions/user_actions'
 
 import App from './app';
@@ -20,6 +20,7 @@ const Root = ({ store }) => {
 
   const onEnterFetchUser = (nextState) => {
     store.dispatch(fetchUser(nextState.params.userId))
+    store.dispatch(fetchUsersStories(nextState.params.userId));
   }
 
   return (

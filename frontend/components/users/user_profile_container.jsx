@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchUser, followUser, unfollowUser, updateUser } from '../../actions/user_actions';
+import { createLike, deleteLike } from '../../actions/like_actions';
 import {fetchUsersStories } from '../../actions/story_actions';
 import UserProfile from './user_profile'
 

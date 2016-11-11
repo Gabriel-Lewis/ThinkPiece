@@ -19,6 +19,7 @@ gem 'thin'
 gem 'annotate'
 gem 'bcrypt'
 gem 'figaro'
+gem 'seed_dump'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

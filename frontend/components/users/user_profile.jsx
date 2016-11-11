@@ -81,7 +81,7 @@ class UserProfile extends React.Component {
         {this.userProfileButtons()}
       </div>
       </div>
-      <ProfileStoryFeed currentUser={this.props.currentUser} fetchUsersStories={this.props.fetchUsersStories} user={this.props.user} stories={this.props.stories} />
+      <ProfileStoryFeed createLike={this.props.createLike} deleteLike={this.props.deleteLike} currentUser={this.props.currentUser} fetchUsersStories={this.props.fetchUsersStories} user={this.props.user} stories={this.props.stories} />
     </div>
       );
     }
