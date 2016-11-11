@@ -8,7 +8,9 @@ class ProfileStoryFeed extends React.Component {
     nextProps.fetchUsersStories(this.props.user.id);
   }
 
-  
+  componentDidUpdate(prevProps, prevState) {
+
+  }
 
   render() {
     return (
