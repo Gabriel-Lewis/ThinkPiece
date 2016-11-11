@@ -7,6 +7,7 @@ const SessionMiddleware = ({getState, dispatch}) => next => action => {
   const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON));
   switch (action.type) {
     case LOGIN:
+
       login(action.user, successCallback, errorCallback);
       return next(action);
     case SIGNUP:

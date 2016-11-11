@@ -6,6 +6,7 @@ export const REMOVE_STORY = "REMOVE_STORY";
 export const CREATE_STORY = "CREATE_STORY";
 export const UPDATE_STORY = "UPDATE_STORY";
 export const DELETE_STORY = "DELETE_STORY";
+export const FETCH_USER_STORIES = "FETCH_USER_STORIES";
 
 export const fetchStories = () => ({
   type: FETCH_STORIES
@@ -44,4 +45,9 @@ export const receiveStory = story => ({
 export const removeStory = story => ({
   type: REMOVE_STORY,
   story
+});
+
+export const fetchUsersStories = user_id => ({
+  type: FETCH_USER_STORIES,
+  user_id
 });

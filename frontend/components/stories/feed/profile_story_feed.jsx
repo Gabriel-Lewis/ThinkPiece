@@ -4,8 +4,11 @@ import {withRouter} from 'react-router'
 import HeaderContainer from '../../header/header_container'
 
 class ProfileStoryFeed extends React.Component {
-  componentDidMount() {
+  componentWillReceiveProps(nextProps) {
+    nextProps.fetchUsersStories(this.props.user.id);
   }
+
+  
 
   render() {
     return (
@@ -18,6 +21,9 @@ class ProfileStoryFeed extends React.Component {
                 key={story.id}
                 user={this.props.user}
                 story={story}
+                currentUser={this.props.currentUser}
+                createLike={this.props.createLike}
+                deleteLike={this.props.deleteLike}
                 />
             ))
           }

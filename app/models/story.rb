@@ -15,6 +15,12 @@ class Story < ApplicationRecord
   validates :title, :user_id, presence: true
   belongs_to :user
 
+  has_many :likes
+  
+  has_many :liked_users,
+    through: :likes,
+    source: :user
+
   def author
     user_id
   end

@@ -20,8 +20,6 @@ const _nullUser = Object.freeze({
 const UserReducer = (oldState = _nullUser, action) => {
   switch (action.type) {
     case RECEIVE_USER:
-      // const followers = action.user.followers
-      // const following = action.user.following
       return action.user;
     default:
       return oldState;

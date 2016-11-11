@@ -1,8 +1,8 @@
 import { RECEIVE_STORY, RECEIVE_ALL_STORIES, REMOVE_STORY} from '../actions/story_actions'
 import merge from 'lodash/merge';
 
-const StoryReducer = (oldState = {}, action) => {
 
+const StoryReducer = (oldState = {}, action) => {
   switch (action.type) {
     case RECEIVE_STORY:
       return merge({}, oldState, {[action.story.id]: action.story});

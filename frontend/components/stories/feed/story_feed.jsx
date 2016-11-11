@@ -18,6 +18,9 @@ class StoryIndex extends React.Component {
                 key={story.id}
                 user={story.user}
                 story={story}
+                currentUser={this.props.currentUser}
+                createLike={this.props.createLike}
+                deleteLike={this.props.deleteLike}
               />
 
             ))

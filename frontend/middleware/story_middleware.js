@@ -7,6 +7,7 @@ import {
   FETCH_STORIES,
   UPDATE_STORY,
   DELETE_STORY,
+  FETCH_USER_STORIES
    } from '../actions/story_actions';
 
 import {
@@ -14,7 +15,8 @@ import {
   deleteStory,
   updateStory,
   fetchStories,
-  fetchStory
+  fetchStory,
+  fetchUsersStories
 } from '../util/story_api_util';
 import { hashHistory } from 'react-router';
 
@@ -28,6 +30,9 @@ const StoryMiddleware = ({getState, dispatch}) => next => action => {
   switch (action.type) {
     case FETCH_STORY:
       fetchStory(action.id, receiveStorySuccess);
+      return next(action);
+    case FETCH_USER_STORIES:
+      fetchUsersStories(action.user_id, receiveAllStoriesSuccess);
       return next(action);
     case FETCH_STORIES:
       fetchStories(receiveAllStoriesSuccess);

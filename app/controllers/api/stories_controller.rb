@@ -1,7 +1,9 @@
 
 class Api::StoriesController < ApplicationController
   def index
-    if current_user
+    if params[:user_id]
+      @stories = Story.where(user: params[:user_id].to_i)
+    elsif current_user
       followed_authors = current_user.following
       @stories = Story.where(user: followed_authors)
     else

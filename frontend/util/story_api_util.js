@@ -41,6 +41,14 @@ export const fetchStories = success => {
   });
 };
 
+export const fetchUsersStories = (user_id, success) => {
+  $.ajax({
+    url: `/api/stories`,
+    data: { user_id },
+    success: success
+  });
+};
+
 export const searchStories = (query, success) => {
   $.ajax({
     url: `/api/stories/search`,

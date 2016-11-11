@@ -22,6 +22,12 @@ class User < ApplicationRecord
 
   has_many :stories
 
+  has_many :likes
+
+  has_many :liked_stories,
+    through: :likes,
+    source: :story
+
   has_many :relationships,
     foreign_key: :follower_id,
     class_name: :Follow,

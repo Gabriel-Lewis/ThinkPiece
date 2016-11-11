@@ -76,3 +76,21 @@ img.feed-profile-image  {
   height: 36px;
   width: 36px;
 }
+
+.story-like-details {
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+img.heart {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+
+}
+
+img.heart:hover {
+cursor: pointer;
+}

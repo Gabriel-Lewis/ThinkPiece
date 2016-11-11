@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import StoryDetails from './story_details';
 
 
 class StoryFeedItem extends React.Component {
@@ -8,6 +9,11 @@ class StoryFeedItem extends React.Component {
     this.story = props.story;
     this.user = props.user;
     this.mainImgBlock = this.mainImgBlock.bind(this)
+    this.handleLike = this.handleLike.bind(this)
+    this.handleUnlike = this.handleUnlike.bind(this)
+    this.state = {
+      liked_users: props.story.liked_users.includes(props.currentUser.id)
+    }
   }
 
   mainImgBlock() {
@@ -16,7 +22,23 @@ class StoryFeedItem extends React.Component {
     } else {
       return <div></div>
     }
+  }
 
+  handleUnlike() {
+    const id = this.story.id;
+    this.props.deleteLike(id);
+  }
+
+  handleLike() {
+    const id = this.story.id;
+    this.props.createLike(id);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      likeCount: nextProps.story.likeCount,
+      liked_users: nextProps.story.liked_users.includes(nextProps.currentUser.id)
+    })
   }
 
   render() {
@@ -32,10 +54,10 @@ class StoryFeedItem extends React.Component {
         {this.mainImgBlock()}
         <h3 className='story-index-item-title'>{this.story.title}</h3>
        </Link>
-
         <Link className='read-more-button' to={`/stories/${this.story.id}`}>
           Read more...
         </Link>
+        <StoryDetails unlike={this.handleUnlike} like={this.handleLike} liked={this.state.liked_users} likeCount={this.props.story.likeCount} />
     </li>
   );
   }
