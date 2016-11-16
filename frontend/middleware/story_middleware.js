@@ -23,7 +23,6 @@ import { hashHistory } from 'react-router';
 const StoryMiddleware = ({getState, dispatch}) => next => action => {
 
   let success;
-  let error = e => console.log(e.responseJSON);
   let receiveAllStoriesSuccess = stories => dispatch(receiveAllStories(stories));
   let receiveStorySuccess = story => dispatch(receiveStory(story));
   let removeStorySuccess = story => dispatch(removeStory(story));

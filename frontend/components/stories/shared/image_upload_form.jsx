@@ -25,7 +25,6 @@ class ImageUploadForm extends React.Component {
     },
     data: formData,
     success: (response) => {
-      console.log(response);
       photo = response.data.link;
       t.props.setMainImg(photo)
       },

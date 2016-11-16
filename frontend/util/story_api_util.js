@@ -3,8 +3,7 @@ export const createStory = (story, success) => {
     url: '/api/stories',
     method: 'POST',
     data: { story },
-    success: success,
-    error: () => {console.log("Error in StoryApiUtil#create")}
+    success: success
   });
 }
 
@@ -13,8 +12,7 @@ export const updateStory = (story, success) => {
     url: `/api/stories/${story.id}`,
     method: 'PATCH',
     data: { story },
-    success: success,
-    error: () => {console.log("Error in StoryApiUtil#update")}
+    success: success
   });
 }
 
@@ -22,8 +20,7 @@ export const deleteStory = (id, success) => {
   $.ajax({
     url: `api/stories/${id}`,
     method: 'DELETE',
-    success: success,
-    error: () => {console.log("Error in StoryApiUtil#delete")}
+    success: success
   });
 };
 

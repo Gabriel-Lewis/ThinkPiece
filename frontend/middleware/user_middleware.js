@@ -24,7 +24,6 @@ import { hashHistory } from 'react-router';
 const UserMiddleware = ({getState, dispatch}) => next => action => {
 
   let success;
-  let error = e => console.log(e.responseJSON);
   let receiveAllUsersSuccess = stories => dispatch(receiveAllUsers(stories));
   let receiveUserSuccess = user => {dispatch(receiveUser(user))}
   let receiveUsersSuccess = (users) => {

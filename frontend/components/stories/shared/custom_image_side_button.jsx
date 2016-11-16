@@ -34,7 +34,6 @@ class CustomImageSideButton extends ImageSideButton {
       },
       data: formData,
       success: (response) => {
-        console.log(response);
         photo = response.data.link;
           this.props.setEditorState(addNewBlock(
             this.props.getEditorState(),

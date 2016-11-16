@@ -1,8 +1,7 @@
  export const fetchUser = (id, success) => {
   $.ajax({
     url: `/api/users/${id}`,
-    success: success,
-    error: () => {console.log("Error in UserApiUtil#fetchUser")}
+    success: success
   })
 }
 
@@ -11,8 +10,7 @@ export const updateUser = (user, success) => {
     url: `/api/users/${user.id}`,
     method: 'PATCH',
     data: { user },
-    success: success,
-    error: () => {console.log("Error in UserApiUtil#update")}
+    success: success
   })
 }
 
