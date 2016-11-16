@@ -14,8 +14,7 @@ const RootMiddleware =
   SessionMiddleware,
   StoryMiddleware,
   UserMiddleware,
-  LikeMiddleware,
-  logger
+  LikeMiddleware
 );
 
 export default RootMiddleware;
