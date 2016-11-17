@@ -29,7 +29,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "postinstall": "webpack"
+    "heroku-postbuild": "webpack --config webpack.config.prod.js"
   },
   "engines": {
     "node": "6.7.0",

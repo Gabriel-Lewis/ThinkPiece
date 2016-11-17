@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  ImageSideButton,
-  Block,
-  addNewBlock,
-  createEditorState,
-  Editor,
-} from 'medium-draft';
-
-// const cloud_name = ENV['CLOUD_NAME']
-// const upload_preset = ENV['UPLOAD_PRESET']
+import { ImageSideButton, Block, addNewBlock, createEditorState, Editor } from 'medium-draft';
 
 class CustomImageSideButton extends ImageSideButton {
 
@@ -16,10 +7,7 @@ class CustomImageSideButton extends ImageSideButton {
     super(props)
     this.onChange = this.onChange.bind(this)
   }
-  /*
-  We will only check for first file and also whether
-  it is an image or not.
-  */
+
   onChange(e) {
 
     var formData = new FormData();

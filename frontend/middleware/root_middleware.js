@@ -18,4 +18,3 @@ const RootMiddleware =
 );
 
 export default RootMiddleware;
-// composeWithDevTools(
