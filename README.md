@@ -29,7 +29,7 @@ Users can create, edit, and share their own stories, or read the stories of othe
 
 ### Rich Text Editing
 
-<img alt="" width='700px' src="http://i.imgur.com/Qmdzjam.gif">
+<img alt="rich text editing" width='700px' src="http://i.imgur.com/Qmdzjam.gif">
 
 **With Rich Text Editing users can style their stories to their liking.**
 
@@ -37,7 +37,7 @@ One of Medium's best features is it's easy to use text editor. Using the [Medium
 
 ### Image Upload
 
-<img alt="" width='700px' src="http://i.imgur.com/K1WCa49.gif">
+<img alt="image upload" width='700px' src="http://i.imgur.com/K1WCa49.gif">
 
 **A Picture is worth a thousand words**
 
