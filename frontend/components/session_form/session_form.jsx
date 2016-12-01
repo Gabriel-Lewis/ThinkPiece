@@ -14,6 +14,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.guestLoginIn = this.guestLoginIn.bind(this);
   }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
@@ -95,11 +96,14 @@ class SessionForm extends React.Component {
           </div>
           <input className='sign-in-button' type="submit"/>
         </form>
+        <button
+          className='sign-in-button'
+          onClick={this.guestLoginIn}
+          >Guest Login</button>
         <p>Don't have an account? <button
             className='session-form-toggle'
             onClick={this.toggleFormType}
-          >Sign Up</button> or login as a {this.guestLoginInButton()} </p>
-
+          >Sign Up</button></p>
         </div>
       </div>
     )

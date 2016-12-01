@@ -1,13 +1,6 @@
 import { RECEIVE_USER} from '../actions/user_actions'
 import merge from 'lodash/merge';
 
-const defaultUser = {
-  name: null,
-  id: null,
-  followers: null,
-  follows: null,
-  followed: false
-};
 const _nullUser = Object.freeze({
   currentUser: null,
   errors: [],
