@@ -17,7 +17,7 @@
 class User < ApplicationRecord
   validates :username, :email, :password_digest, presence: true
   validates :username, :email, :session_token, uniqueness: true
-  validates :password, length: {minimum: 6, allow_nil: true}
+  validates :password, length: { minimum: 6, allow_nil: true }
   attr_reader :password
 
   has_many :stories
@@ -48,17 +48,14 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  # Follows a user.
   def follow(other_user)
     relationships.create(followed_id: other_user.id)
   end
 
-  # Unfollows a user.
   def unfollow(other_user)
     relationships.find_by(followed_id: other_user.id).destroy
   end
 
-  # Returns true if the current user is following the other user.
   def following?(other_user)
     following.include?(other_user)
   end

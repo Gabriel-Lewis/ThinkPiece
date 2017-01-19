@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { searchStories } from '../../util/story_api_util';
 import { searchUsers } from '../../util/user_api_util';
 import SearchResults from './search_results';
