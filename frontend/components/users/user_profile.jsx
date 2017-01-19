@@ -39,7 +39,7 @@ class UserProfile extends React.Component {
     if (this.props.user) {
       return (
         <div className='followerCountLabels'>
-          <p><span>{this.props.user.following.length} Following</span><span>{this.props.user.followers.length} Followers</span></p>
+          <p><span><span className="follower-number">{this.props.user.following.length}</span>Following</span><span><span className="follower-number">{this.props.user.followers.length}</span>Followers</span></p>
         </div>
       );
     }

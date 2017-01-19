@@ -21,7 +21,7 @@ class ProfileStoryFeed extends React.Component {
             this.props.stories.map(story => (
               <StoryFeedItem
                 key={story.id}
-                user={this.props.user}
+                user={story.user}
                 story={story}
                 currentUser={this.props.currentUser}
                 createLike={this.props.createLike}

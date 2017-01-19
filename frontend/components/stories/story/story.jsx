@@ -63,7 +63,9 @@ class Story extends React.Component {
           <img
             className='user-image'
             src={story.user.profile_image_url}
-            /> <p>{story.user.name}</p></Link>
+            />
+          <div className="author-details"><p className="author-name">{story.user.name}</p><p className="author-bio">{story.user.bio}</p></div>
+        </Link>
         </div>
         <h3
           className='story-title'

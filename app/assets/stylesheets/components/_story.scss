@@ -50,12 +50,25 @@ figure.md-block-image figcaption {
 }
 
 .author-header img {
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: 60px;
   float: left;
   margin-right: 10px;
 }
 
 .author-header p {
   float: left;
+}
+
+.author-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.auth-bio {
+  overflow: hidden;
 }

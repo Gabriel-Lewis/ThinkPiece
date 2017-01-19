@@ -8,14 +8,14 @@ Thinkpiece is a single page web app inspired by Medium.  It utilizes Ruby on Rai
 
 ### User Account Creation and Login
 
-<img alt="" width='700px' src="http://i.imgur.com/6RAzbEk.png">
+<img alt="Thinkpiece" width='700px' src="http://i.imgur.com/6RAzbEk.png">
 
 **Users can Sign up with Thinkpiece knowing their information is secure**
 
 When users sign up their data is encrypted using the ruby gem [BCrypt](https://github.com/codahale/bcrypt-ruby). Once a user logs in they're browser stores a session token to keep them logged when they come to Thinkpiece again.
 
 ### Stories
-<img alt="" width='700px' src="http://i.imgur.com/y1zSeQm.png">
+<img alt="Gabriel Lewis" width='700px' src="http://i.imgur.com/y1zSeQm.png">
 
 **Stories are the main feature of Thinkpiece.**
 
@@ -23,7 +23,7 @@ Users can create, edit, and share their own stories, or read the stories of othe
 
 ### Feed
 
-<img alt="" width='700px' src="http://i.imgur.com/ihxBGdz.gif">
+<img alt="Think piece feed" width='700px' src="http://i.imgur.com/ihxBGdz.gif">
 
 **The main feed is where users can view stories of all of the users the follow.**
 

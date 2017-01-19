@@ -75,14 +75,19 @@
 }
 
 .user-bio {
-
+  width: 77%;
 }
 
 .followerCountLabels {
   color: rgba(0,0,0,.44);
+  margin-top: 10px;
   padding-bottom: 16px;
-  white-space: nowrap!important;
+  white-space: nowrap;
 }
 .followerCountLabels span {
  padding-right:8px;
+}
+
+.follower-number {
+  font-weight: 700;
 }
