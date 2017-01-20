@@ -70,5 +70,5 @@ figure.md-block-image figcaption {
   font-weight: 700;
 }
 .auth-bio {
-  overflow: hidden;
+  text-overflow: clip;
 }

@@ -213,15 +213,39 @@
   border-radius: 4px;
   box-shadow:0 1px 2px rgba(0,0,0,.25),0 0 1px rgba(0,0,0,.35);
   vertical-align: middle;
-  padding: 20px;
+  padding: 8px 0px;
   width: 230px;
   border: none;
   background-color: white;
   position: relative;
-  overflow: hidden;
   left: 30%;
   top: 70px;
   text-align: left;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
-  font-size: 14px
+  font-size: 16px
+}
+
+.settings-modal::after {
+  content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    background: white;
+    top: -14px;
+    width: 14px;
+    height: 14px;
+    transform: rotate(45deg) translate(6px,6px);
+    box-shadow: -1px -1px 1px -1px rgba(0,0,0,.44);
+}
+
+.settings-modal ul li {
+  padding: 7px 25px;
+}
+
+.line {
+  border-top: solid 1px rgba(0,0,0,.05);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 0;
+  padding-top: 0;
 }

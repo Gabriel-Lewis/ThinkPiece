@@ -5,6 +5,10 @@
   box-shadow:0 1px 2px rgba(0,0,0,.25),0 0 1px rgba(0,0,0,.35);
   border-radius: 3px;
   margin-top: 27px;
+  width: 260px;
+  left:59%;
+  max-height: 550px;
+  overflow: scroll;
 }
 
 .hidden {
@@ -12,15 +16,61 @@
 }
 .search-results strong {
   display: inline-block;
+  font-size: 16;
   margin-bottom: 10px;
+}
+.search-results :nth-child(4)  {
+  margin-top: 15px;
+}
+
+.search-results::after {
+  content: '';
+    display: block;
+    position: absolute;;
+    left: 50%;
+    background: white;
+    top: -14px;
+    width: 14px;
+    height: 14px;
+    transform: rotate(45deg) translate(6px,6px);
+    box-shadow: -1px -1px 1px -1px rgba(0,0,0,.44);
 }
 
 .search-list li {
   margin-bottom: 10px;
   color: $gray-text;
-
 }
+
+.search-list li a {
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+}
+
 
 .search-list li:hover {
   color: $overlay-gray;
+}
+
+.not-found {
+  color: $gray-text;
+}
+
+.search-profile-image {
+  color: transparent;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-position: center;
+}
+
+.search-story-image {
+  background: white url(https://files.graphiq.com/2307/media/images/White_430113_i0.png) 0 0 no-repeat!important;
+  text-indent: -9999px;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  margin-right: 10px;
 }

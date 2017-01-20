@@ -43,6 +43,7 @@ class SettingsModal extends React.Component{
           onRequestClose={this.closeModal}
           >
           <ul>
+            <li><Link className='' to='/new-story'>New Story</Link></li>
             <li><Link
               to={`users/${this.props.currentUser.id}`}>
               Profile
