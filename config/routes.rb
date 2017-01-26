@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create]
   end
 
-
   root 'static_pages#root'
+  get '*path', to: 'static_pages#root'
+  
 end

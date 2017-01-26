@@ -12,7 +12,6 @@ import StoryContainer from './stories/story/story_container';
 import NewStoryContainer from './stories/new_story_container';
 import UserProfileContainer from './users/user_profile_container';
 
-
 const Root = ({ store }) => {
   const onEnterFetchStory = (nextState) => {
     store.dispatch(fetchStory(nextState.params.storyId))
@@ -25,7 +24,7 @@ const Root = ({ store }) => {
 
   return (
     <Provider store={store}>
-      <Router history={hashHistory}>
+      <Router history={browserHistory}>
         <Route path='/' component={App} >
           <IndexRoute component={StoryIndexContainer} />
           <Route path="/stories" component={StoryIndexContainer} />

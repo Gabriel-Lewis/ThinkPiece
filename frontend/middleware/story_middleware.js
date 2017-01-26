@@ -18,7 +18,7 @@ import {
   fetchStory,
   fetchUsersStories
 } from '../util/story_api_util';
-import { hashHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 
 const StoryMiddleware = ({getState, dispatch}) => next => action => {
 
@@ -39,20 +39,20 @@ const StoryMiddleware = ({getState, dispatch}) => next => action => {
     case CREATE_STORY:
       success = story => {
         dispatch(receiveStory(story));
-        hashHistory.push(`stories/${story.id}`);
+        browserHistory.push(`/stories/${story.id}`);
       };
       createStory(action.story, success);
       return next(action);
     case UPDATE_STORY:
       success = story => {
         dispatch(receiveStory(story));
-        hashHistory.push(`stories/${story.id}`);
+        browserHistory.push(`/stories/${story.id}`);
       };
       updateStory(action.story, success)
       return next(action);
     case DELETE_STORY:
       success = story => {
-        hashHistory.push('/');
+        browserHistory.push('/');
       };
       deleteStory(action.id, success);
       return next(action);

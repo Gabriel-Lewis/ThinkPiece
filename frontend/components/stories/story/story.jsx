@@ -40,7 +40,7 @@ class Story extends React.Component {
       if (this.props.story.user.id === this.props.currentUser.id) {
         return (
           <div className='story-options'>
-          <Link to={`stories/${this.props.story.id}/edit`}>Edit</Link>
+          <Link to={`/stories/${this.props.story.id}/edit`}>Edit</Link>
 
           </div>
         );
@@ -59,7 +59,7 @@ class Story extends React.Component {
     return (
       <div className='story'>
         <div className='author-header'>
-        <Link to={`users/${story.user.id}`}>
+        <Link to={`/users/${story.user.id}`}>
           <img
             className='user-image'
             src={story.user.profile_image_url}

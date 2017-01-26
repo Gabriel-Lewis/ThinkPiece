@@ -35,7 +35,7 @@ class StoryFeedItem extends React.Component {
     return (
     <li className='story-index-item'>
       <div className='story-author-link'>
-        <Link className to={`users/${this.story.user_id}`} >
+        <Link className to={`/users/${this.story.user_id}`} >
           <img className='feed-profile-image user-image' src={this.user.profile_image_url} />
           {this.user.name}
         </Link>
