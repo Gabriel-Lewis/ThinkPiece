@@ -11,6 +11,7 @@ import StoryFormContainer from './stories/story_form_container';
 import StoryContainer from './stories/story/story_container';
 import NewStoryContainer from './stories/new_story_container';
 import UserProfileContainer from './users/user_profile_container';
+import NotFoundComponent from './shared/not_found_component';
 
 const Root = ({ store }) => {
   const onEnterFetchStory = (nextState) => {
@@ -18,8 +19,8 @@ const Root = ({ store }) => {
   }
 
   const onEnterFetchUser = (nextState) => {
-    store.dispatch(fetchUser(nextState.params.userId))
-    store.dispatch(fetchUsersStories(nextState.params.userId));
+    store.dispatch(fetchUser(nextState.params.username))
+    store.dispatch(fetchUsersStories(nextState.params.username));
   }
 
   return (
@@ -29,10 +30,11 @@ const Root = ({ store }) => {
           <IndexRoute component={StoryIndexContainer} />
           <Route path="/stories" component={StoryIndexContainer} />
           <Route path="/stories/:storyId" component={StoryContainer} onEnter={onEnterFetchStory}/>
-          <Route path="/users/:userId" component={UserProfileContainer} onEnter={onEnterFetchUser}/>
+          <Route path="/users/:username" component={UserProfileContainer} onEnter={onEnterFetchUser}/>
         </Route>
         <Route path='/new-story' component={NewStoryContainer} />
         <Route path="/stories/:storyId/edit" component={StoryFormContainer} onEnter={onEnterFetchStory} />
+        <Route path='*' component={NotFoundComponent} />
       </Router>
     </Provider>
   )

@@ -7,6 +7,8 @@ import {
 import { convertToRaw } from 'draft-js';
 import { Link, withRouter } from 'react-router';
 
+import ErrorMessage from '../../shared/not_found_component';
+
 class Story extends React.Component {
 
   constructor(props) {
@@ -54,12 +56,12 @@ class Story extends React.Component {
     const story = this.props.story;
 
     if (!story) {
-        return <p>Loading</p>
+        return (<ErrorMessage />)
     }
     return (
       <div className='story'>
         <div className='author-header'>
-        <Link to={`/users/${story.user.id}`}>
+        <Link to={`/users/${story.user.username}`}>
           <img
             className='user-image'
             src={story.user.profile_image_url}

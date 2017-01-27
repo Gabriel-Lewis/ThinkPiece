@@ -45,7 +45,7 @@ class SettingsModal extends React.Component{
           <ul>
             <li><Link className='' to='/new-story'>New Story</Link></li>
             <li><Link
-              to={`users/${this.props.currentUser.id}`}>
+              to={`/users/${this.props.currentUser.username}`}>
               Profile
             </Link></li>
             <li><button

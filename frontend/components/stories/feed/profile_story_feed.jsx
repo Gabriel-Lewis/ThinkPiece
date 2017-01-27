@@ -18,10 +18,10 @@ class ProfileStoryFeed extends React.Component {
       <div className='profile-background'>
         <ul className='story-feed'>
           {
-            this.props.stories.map(story => (
+            this.props.user.stories.map(story => (
               <StoryFeedItem
                 key={story.id}
-                user={story.user}
+                user={this.props.user}
                 story={story}
                 currentUser={this.props.currentUser}
                 createLike={this.props.createLike}

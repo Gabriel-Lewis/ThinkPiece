@@ -2,6 +2,8 @@ import React from 'react';
 import UserProfileEditModal from './user_profile_edit_modal'
 import ProfileStoryFeed from '../stories/feed/profile_story_feed';
 
+import ErrorMessage from './../shared/not_found_component';
+
 class UserProfile extends React.Component {
   constructor(props) {
     super(props)
@@ -61,8 +63,8 @@ class UserProfile extends React.Component {
   render() {
     const user = this.props.user;
 
-    if (!user) {
-        return <p>Loading</p>
+    if (user.id == 0) {
+        return (<ErrorMessage />)
     }
     return (
       <div>
@@ -81,7 +83,7 @@ class UserProfile extends React.Component {
         {this.userProfileButtons()}
       </div>
       </div>
-      <ProfileStoryFeed createLike={this.props.createLike} deleteLike={this.props.deleteLike} currentUser={this.props.currentUser} fetchUsersStories={this.props.fetchUsersStories} user={this.props.user} stories={this.props.stories} />
+      <ProfileStoryFeed createLike={this.props.createLike} deleteLike={this.props.deleteLike} currentUser={this.props.currentUser} user={this.props.user} stories={this.props.stories} />
     </div>
       );
     }

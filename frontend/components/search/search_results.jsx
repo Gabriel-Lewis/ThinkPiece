@@ -12,7 +12,7 @@ const storyResultList = (stories, clearInput) => {
       <ul className='search-list'>
         {Object.keys(stories).map( (id) => {
           return <li key={stories[id].title + id}>
-            <Link onClick={clearInput} to={`stories/${id}`}>
+            <Link onClick={clearInput} to={`/stories/${id}`}>
               <img className='search-story-image' src={stories[id].main_image_url} alt/>
               {stories[id].title}</Link>
           </li>
@@ -34,7 +34,7 @@ const usersResultList = (users, clearInput) => {
       <ul className='search-list'>
         {users.map( (user) => {
           return <li key={user.name + user.id}>
-            <Link onClick={clearInput} to={`users/${user.id}`}>
+            <Link onClick={clearInput} to={`/users/${user.username}`}>
               <img className='search-profile-image' src={user.profile_image_url} />
               {user.name}
             </Link>

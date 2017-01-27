@@ -2,11 +2,11 @@ import { RECEIVE_USER} from '../actions/user_actions'
 import merge from 'lodash/merge';
 
 const _nullUser = Object.freeze({
-  currentUser: null,
   errors: [],
   followers: [],
   following: [],
-  stories: []
+  stories: [],
+  id: 0
 });
 
 

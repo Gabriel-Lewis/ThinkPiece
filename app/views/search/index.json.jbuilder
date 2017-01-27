@@ -1,4 +1,4 @@
-json.array! @users, :id, :name
+json.array! @users, :id, :name, :username
 
 @stories.each do |story|
   json.set! story.id do
