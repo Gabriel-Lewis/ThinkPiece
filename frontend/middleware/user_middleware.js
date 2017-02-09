@@ -30,7 +30,6 @@ const UserMiddleware = ({getState, dispatch}) => next => action => {
     dispatch(receiveUser(users.user))
     dispatch(receiveCurrentUser(users.currentUser))
   };
-  let removeUserSuccess = user => dispatch(removeUser(user));
   switch (action.type) {
     case FETCH_USER:
       fetchUser(action.username, receiveUserSuccess);
