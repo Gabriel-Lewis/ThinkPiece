@@ -18,7 +18,7 @@ export const updateStory = (story, success) => {
 
 export const deleteStory = (id, success) => {
   $.ajax({
-    url: `api/stories/${id}`,
+    url: `/api/stories/${id}`,
     method: 'DELETE',
     success: success
   });
@@ -38,10 +38,10 @@ export const fetchStories = success => {
   });
 };
 
-export const fetchUsersStories = (user_id, success) => {
+export const fetchUsersStories = (username, success) => {
   $.ajax({
     url: `/api/stories`,
-    data: { user_id },
+    data: { username },
     success: success
   });
 };

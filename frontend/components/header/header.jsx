@@ -42,6 +42,7 @@ class Header extends React.Component {
                 className='modal'
                 overlayClassName='overlay'
                 isOpen={this.state.modalOpen}
+                contentLabel="Login Modal"
                 onRequestClose={this.onModalClose}
                 >
                 <SessionFormContainer close={this.onModalClose} />

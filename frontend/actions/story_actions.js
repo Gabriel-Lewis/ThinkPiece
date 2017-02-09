@@ -47,7 +47,7 @@ export const removeStory = story => ({
   story
 });
 
-export const fetchUsersStories = user_id => ({
+export const fetchUsersStories = username => ({
   type: FETCH_USER_STORIES,
-  user_id
+  username
 });

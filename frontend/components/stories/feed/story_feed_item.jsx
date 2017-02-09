@@ -47,7 +47,12 @@ class StoryFeedItem extends React.Component {
         <Link className='read-more-button' to={`/stories/${this.story.id}`}>
           Read more...
         </Link>
-        <StoryDetails unlike={this.handleUnlike} like={this.handleLike} liked={this.props.story.liked } likeCount={this.props.story.likeCount} />
+        <StoryDetails
+          unlike={this.handleUnlike}
+          like={this.handleLike}
+          liked={this.props.story.liked }
+          likeCount={this.props.story.likeCount}
+          />
     </li>
   );
   }

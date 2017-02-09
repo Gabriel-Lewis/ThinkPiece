@@ -41,6 +41,7 @@ class SettingsModal extends React.Component{
           overlayClassName='no-overlay'
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
+          contentLabel="Settings Modal"
           >
           <ul>
             <li><Link className='' to='/new-story'>New Story</Link></li>

@@ -8,7 +8,6 @@ export const signup = (user, success, error) => {
   })
 }
 
-
 export const login = (user, success, error) => {
   $.ajax({
     url: '/api/session',

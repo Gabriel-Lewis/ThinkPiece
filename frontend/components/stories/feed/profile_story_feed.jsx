@@ -4,13 +4,6 @@ import {withRouter} from 'react-router'
 import HeaderContainer from '../../header/header_container'
 
 class ProfileStoryFeed extends React.Component {
-  componentWillReceiveProps(nextProps) {
-    // if (nextProps.stories !== {}) {
-      // nextProps.fetchUsersStories(this.props.user.id);
-    // }
-
-  }
-
 
   render() {
     return (
@@ -18,7 +11,7 @@ class ProfileStoryFeed extends React.Component {
       <div className='profile-background'>
         <ul className='story-feed'>
           {
-            this.props.user.stories.map(story => (
+            this.props.stories.map(story => (
               <StoryFeedItem
                 key={story.id}
                 user={this.props.user}

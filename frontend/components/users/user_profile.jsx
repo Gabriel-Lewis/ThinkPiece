@@ -16,6 +16,10 @@ class UserProfile extends React.Component {
     this.userFollowerCount = this.userFollowerCount.bind(this)
   }
 
+  componentWillUnmount() {
+    this.props.removeUser(this.props.user)
+  }
+
   handleFollow() {
     this.props.follow(this.props.user.id)
   }
@@ -41,7 +45,16 @@ class UserProfile extends React.Component {
     if (this.props.user) {
       return (
         <div className='followerCountLabels'>
-          <p><span><span className="follower-number">{this.props.user.following.length}</span>Following</span><span><span className="follower-number">{this.props.user.followers.length}</span>Followers</span></p>
+          <p>
+            <span>
+              <span className="follower-number">
+                {this.props.user.following.length}</span>Following
+            </span>
+            <span>
+              <span className="follower-number">
+                {this.props.user.followers.length}</span>Followers
+            </span>
+            </p>
         </div>
       );
     }
@@ -51,7 +64,11 @@ class UserProfile extends React.Component {
   userProfileButtons() {
     if (this.props.user && this.props.currentUser) {
       if (this.props.user.id === this.props.currentUser.id) {
-        return (<UserProfileEditModal currentUser={this.props.currentUser} updateUser={this.props.updateUser} />)
+        return (
+          <UserProfileEditModal
+            currentUser={this.props.currentUser}
+            updateUser={this.props.updateUser}
+            /> )
       } else if (this.props.following) {
         return (this.unfollowButton())
       } else {
@@ -66,6 +83,7 @@ class UserProfile extends React.Component {
     if (user.id == 0) {
         return (<ErrorMessage />)
     }
+
     return (
       <div>
       <div className='full-user-profile'>
@@ -83,7 +101,13 @@ class UserProfile extends React.Component {
         {this.userProfileButtons()}
       </div>
       </div>
-      <ProfileStoryFeed createLike={this.props.createLike} deleteLike={this.props.deleteLike} currentUser={this.props.currentUser} user={this.props.user} stories={this.props.stories} />
+      <ProfileStoryFeed
+        createLike={this.props.createLike}
+        deleteLike={this.props.deleteLike}
+        currentUser={this.props.currentUser}
+        user={user}
+        stories={this.props.stories}
+        />
     </div>
       );
     }

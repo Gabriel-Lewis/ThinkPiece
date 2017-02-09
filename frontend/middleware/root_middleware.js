@@ -10,11 +10,12 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 const logger = createLogger();
 
 const RootMiddleware =
-  composeWithDevTools(applyMiddleware(
+  applyMiddleware(
   SessionMiddleware,
   StoryMiddleware,
   UserMiddleware,
-  LikeMiddleware
-));
+  LikeMiddleware,
+  logger
+);
 
 export default RootMiddleware;

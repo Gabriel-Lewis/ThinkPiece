@@ -31,7 +31,7 @@ const StoryMiddleware = ({getState, dispatch}) => next => action => {
       fetchStory(action.id, receiveStorySuccess);
       return next(action);
     case FETCH_USER_STORIES:
-      fetchUsersStories(action.user_id, receiveAllStoriesSuccess);
+      fetchUsersStories(action.username, receiveAllStoriesSuccess);
       return next(action);
     case FETCH_STORIES:
       fetchStories(receiveAllStoriesSuccess);

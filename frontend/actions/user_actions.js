@@ -14,9 +14,9 @@ export const fetchUsers = () => ({
   type: FETCH_USERS
 });
 
-export const fetchUser = id => ({
+export const fetchUser = username => ({
   type: FETCH_USER,
-  id
+  username
 });
 
 export const createUser = user => ({

@@ -71,6 +71,7 @@ class UserProfileEditModal extends React.Component{
           overlayClassName='overlay'
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
+          contentLabel="User Edit Profile Modal"
           >
           <div className='user-profile-form'>
           <input
