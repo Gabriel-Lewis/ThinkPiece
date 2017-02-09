@@ -6,12 +6,13 @@ import UserProfile from './user_profile'
 
 const mapStateToProps = (state, ownProps) => {
   let following;
+  let currentUser = state.session.currentUser
   if (state.session.currentUser) {
-    following = state.session.currentUser.following.map((user) => user.id).includes(state.user.id);
+    following = state.user.followers.map((user) => user.id).includes(currentUser.id)
   }
 
   return ({
-    currentUser: state.session.currentUser,
+    currentUser: currentUser,
     user: state.user,
     following: following,
     followerCount: state.user.followers,
