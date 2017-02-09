@@ -20,8 +20,10 @@ class SessionForm extends React.Component {
     const user = this.state;
     if (this.state.formType === 'signIn') {
       this.props.login({user});
+      this.props.close()
     } else {
       this.props.signup({user});
+      this.props.close()
     }
   }
 

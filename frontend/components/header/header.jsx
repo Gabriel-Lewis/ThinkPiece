@@ -45,11 +45,11 @@ class Header extends React.Component {
                 contentLabel="Login Modal"
                 onRequestClose={this.onModalClose}
                 >
-                <SessionFormContainer close={this.onModalClose} />
-                  <button
-                    onClick={this.onModalClose}
-                    className='modal-close'
-                    >×</button>
+                <SessionFormContainer open={this.state.modalOpen} close={this.onModalClose} />
+                <button
+                  onClick={this.onModalClose}
+                  className='modal-close'
+                  >×</button>
               </Modal>
             </nav>
         </div>

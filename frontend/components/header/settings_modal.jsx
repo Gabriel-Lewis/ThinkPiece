@@ -54,7 +54,7 @@ class SettingsModal extends React.Component{
               Logout
             </button></li>
           </ul>
-          </Modal>
+        </Modal>
       </div>
     )
   }
