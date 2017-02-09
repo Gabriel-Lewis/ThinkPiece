@@ -5,3 +5,43 @@
 .float-right {
   display: float-right;
 }
+
+@media (max-width: 800px) {
+
+  body {
+    font-size: 1.0em;
+  }
+
+  h3.story-index-item-title {
+    font-size: 24px;
+  }
+
+  .header .medium-green-button {
+      display: none;
+    }
+
+  .story-feed {
+    width: 95%;
+  }
+
+  .story {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .story span {
+    font-size: 18px;
+  }
+
+
+}
+
+@media (min-width: 801px) {
+  .story-feed {
+    max-width: 660px;
+  }
+
+  .story {
+    width: 75%
+  }
+}
