@@ -58,17 +58,13 @@ export default class SearchBar extends React.Component {
 
   focusOnSearchInput() {
     this.refs.search.focus()
-  }
-
-  showSearchField() {
-    console.log('it works');
     if (this.state.show = '') {
       this.setState({show: 'show'})
     } else {
       this.setState({show: ''})
     }
   }
-
+  
   render() {
 
     let stories = this.state.searchResults
@@ -80,7 +76,6 @@ export default class SearchBar extends React.Component {
             className={`search-button ${this.state.show}`}
             src='http://i.imgur.com/KtfgKIg.png'
             onClick={this.focusOnSearchInput}
-            onTouchStart={this.showSearchField}
             />
           <input
             className='search-input'
