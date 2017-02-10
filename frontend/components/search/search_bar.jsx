@@ -21,6 +21,7 @@ export default class SearchBar extends React.Component {
     this.updateUserResults = this.updateUserResults.bind(this);
     this.clearInput = this.clearInput.bind(this);
     this.focusOnSearchInput = this.focusOnSearchInput.bind(this);
+    this.hideSearchInput = this.hideSearchInput.bind(this);
   }
 
   selectName(event) {
@@ -54,6 +55,12 @@ export default class SearchBar extends React.Component {
     })
   }
 
+  hideSearchInput() {
+    this.setState({
+      show: ''
+    })
+  }
+
   focusOnSearchInput() {
     console.log(this.state.show);
     if (this.state.show === '') {
@@ -81,8 +88,8 @@ export default class SearchBar extends React.Component {
             type='search'
             ref='search'
             onChange={this.selectName}
+            onBlur={this.hideSearchInput}
             value={this.state.inputVal}
-            onBlur={this.state.show = ''}
             placeholder='Search Thinkpiece'
           />
           <SearchResults

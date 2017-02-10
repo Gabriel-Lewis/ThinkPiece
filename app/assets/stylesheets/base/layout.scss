@@ -16,10 +16,6 @@
   .header nav {
     width: 90%;
   }
-  .search-input:focus {
-    width: 200px;
-    margin-left: 5px;
-  }
 }
 
 @media (max-width: 800px) {
@@ -66,7 +62,7 @@
     width: 30%;
   }
 
-  .show {
+  input.show {
     position: absolute;
     top: 67px;
     margin: 0px;
