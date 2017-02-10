@@ -1,6 +1,6 @@
- export const fetchUser = (id, success) => {
+ export const fetchUser = (username, success) => {
   $.ajax({
-    url: `/api/users/${id}`,
+    url: `/api/users/${username}`,
     success: success
   })
 }

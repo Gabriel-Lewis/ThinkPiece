@@ -37,6 +37,7 @@ class PublishStoryModal extends React.Component{
           >Publish
         </button>
         <Modal
+          contentLabel='new story modal'
           className='publish-modal'
           overlayClassName='no-overlay'
           isOpen={this.state.modalIsOpen}

@@ -41,4 +41,3 @@ class storyHeader extends React.Component {
 };
 
 export default storyHeader;
-// <button onClick={this.props.submitStory}>Publish</button>
