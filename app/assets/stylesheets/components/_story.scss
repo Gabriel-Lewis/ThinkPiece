@@ -1,7 +1,6 @@
 .story {
   margin: auto;
   margin-top: 100px;
-  width: 60%;
   max-width: 740px;
   background-color: white;
 }
@@ -14,7 +13,6 @@
   letter-spacing: -.003em;
   text-align: left;
   white-space: pre-wrap;
-
 }
 
 figure.md-block-image figcaption {
@@ -27,8 +25,8 @@ figure.md-block-image figcaption {
   line-height: 1.04;
   letter-spacing: -.028em;
   text-align: left;
-  margin-bottom: 40px;
   margin-left: 30px;
+  margin-bottom: 0;
 }
 
 .story-options {
@@ -67,8 +65,10 @@ figure.md-block-image figcaption {
 
 .author-name {
   margin-bottom: 5px;
-  font-weight: 700;
+  font-size: 15px;
 }
-.auth-bio {
+.author-bio {
   text-overflow: clip;
+  color: rgba(0, 0, 0, .44);
+  font-size: 13px;
 }

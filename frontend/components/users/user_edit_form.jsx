@@ -30,7 +30,7 @@ class UserEditForm extends React.Component{
 
   render () {
     return (
-      <div>
+      <div className='user-profile-edit-form'>
           <div className='user-profile-form'>
             <input
               type='text'

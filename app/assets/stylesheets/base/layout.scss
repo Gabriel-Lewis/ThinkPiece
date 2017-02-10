@@ -6,6 +6,22 @@
   display: float-right;
 }
 
+@media (max-width: 600px) {
+  .modal, .user-profile-modal {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header nav {
+    width: 90%;
+  }
+  .search-input:focus {
+    width: 200px;
+    margin-left: 5px;
+  }
+}
+
 @media (max-width: 800px) {
 
   body {
@@ -18,8 +34,8 @@
 
   .header nav {
     width: 100%;
-    margin-right: 20px;
     margin-left: 20px;
+    margin-right: 20px;
   }
 
   .header .medium-green-button {
@@ -28,6 +44,7 @@
 
   .story-feed {
     width: 95%;
+    max-width: 500px;
   }
 
   .story {
@@ -40,17 +57,35 @@
   }
 
   .search-results{
-
     width: 100%;
     left: 0px;
     right: 0;
   }
 
+  .header-settings {
+    width: 30%;
+  }
 
+  .search-input:focus {
+    position: absolute;
+    top: 67px;
+    margin: 0px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.35);
+    border-radius: 3px;
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  .search-results {
+    top: 100px;
+  }
 
 }
 
-@media (min-width: 801px) {
+@media (min-width: 1000px) {
   .story-feed {
     max-width: 660px;
   }
@@ -62,9 +97,27 @@
 
   .header nav {
     width: 70%;
+    max-width: 1000px
   }
 
   .story {
     width: 75%
   }
+
+  .modal, .user-profile-modal {
+    max-width: 520px;
+  }
+
+  .header-settings {
+    width: 50%;
+  }
+  .search-input {
+    transition: width .2s,padding .2s;
+  }
+
+  .search-input:focus {
+    width: 200px;
+    margin-left: 5px;
+  }
+
 }

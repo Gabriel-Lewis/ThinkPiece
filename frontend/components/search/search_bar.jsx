@@ -19,6 +19,7 @@ export default class SearchBar extends React.Component {
     this.updateResults = this.updateResults.bind(this);
     this.updateUserResults = this.updateUserResults.bind(this);
     this.clearInput = this.clearInput.bind(this);
+    this.focusOnSearchInput = this.focusOnSearchInput.bind(this);
 
   }
 
@@ -53,18 +54,37 @@ export default class SearchBar extends React.Component {
     })
   }
 
+  focusOnSearchInput() {
+    this.refs.search.focus()
+  }
+
   render() {
 
     let stories = this.state.searchResults
     let users = this.state.userSearchResults
     return(
-      <div>
+      <div className="search-bar">
         <div className='auto'>
+          <img
+            className='search-button'
+            src='http://i.imgur.com/KtfgKIg.png'
+            onClick={this.focusOnSearchInput}
+            />
           <input
+            className='search-input'
+            type='search'
+            ref='search'
+            onBlur={this.clearInput}
             onChange={this.selectName}
             value={this.state.inputVal}
-            placeholder='Search Thinkpiece'/>
-          <SearchResults stories={stories} users={users} clearInput={this.clearInput} hidden={this.state.hidden} />
+            placeholder='Search Thinkpiece'
+          />
+          <SearchResults
+            stories={stories}
+            users={users}
+            clearInput={this.clearInput}
+            hidden={this.state.hidden}
+          />
         </div>
       </div>
     );

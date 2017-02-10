@@ -64,7 +64,10 @@ class Header extends React.Component {
             <div className='header-settings'>
               <Link className='medium-green-button' to='/new-story'>Write a story</Link>
               <SearchBar />
-              <SettingsModal handleLogout={this.handleLogout} currentUser={this.props.currentUser}/>
+              <SettingsModal
+                handleLogout={this.handleLogout}
+                currentUser={this.props.currentUser}
+              />
             </div>
           </nav>
         </div>

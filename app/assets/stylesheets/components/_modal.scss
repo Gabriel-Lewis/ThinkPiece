@@ -37,9 +37,8 @@
   margin: 10px auto;
   overflow: hidden;
   padding: 7px;
-  width: 440px;
   white-space: nowrap;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-family: "avenir";
   letter-spacing: 0;
   font-weight: 300;
   font-style: normal;
@@ -109,7 +108,6 @@
     box-shadow: 0 2px 6px 0 rgba(0,0,0,.44);
     padding: 0;
     vertical-align   : middle;
-    max-width: 520px;
     min-height: 580px;
     border          : none;
     background-color : white;
@@ -159,7 +157,7 @@
   font-size: 14px;
   padding: 0 18px;
   line-height: 35px;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-family: "avenir";
   font-weight: 400;
 }
 
@@ -173,9 +171,9 @@
   margin: 10px auto;
   overflow: hidden;
   padding: 7px;
-  width: 440px;
+  width: 90%;
   white-space: nowrap;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-family: "avenir";
   letter-spacing: 0;
   font-weight: 300;
   font-style: normal;
@@ -184,6 +182,9 @@
   border-radius: 0;
 }
 
+.user-profile-edit-form {
+  padding: 30px;
+}
 .user-profile-modal {
     display: inline-block;
     background-color: #fff;
@@ -191,11 +192,9 @@
     box-shadow: 0 2px 6px 0 rgba(0,0,0,.44);
     padding: 0;
     vertical-align   : middle;
-    max-width: 520px;
     min-height: 300px;
     border          : none;
     background-color : white;
-    padding         : 50px;
     overflow: hidden;
 }
 
@@ -221,7 +220,7 @@
   left: 30%;
   top: 70px;
   text-align: left;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-family: "avenir";
   font-size: 16px
 }
 
