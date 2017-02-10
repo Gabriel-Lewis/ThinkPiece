@@ -69,6 +69,7 @@ export default class SearchBar extends React.Component {
             className='search-button'
             src='http://i.imgur.com/KtfgKIg.png'
             onClick={this.focusOnSearchInput}
+            onTouchStart={this.focusOnSearchInput}
             />
           <input
             className='search-input'
