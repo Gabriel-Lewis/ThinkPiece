@@ -74,7 +74,6 @@ export default class SearchBar extends React.Component {
             className='search-input'
             type='search'
             ref='search'
-            onBlur={this.clearInput}
             onChange={this.selectName}
             value={this.state.inputVal}
             placeholder='Search Thinkpiece'
