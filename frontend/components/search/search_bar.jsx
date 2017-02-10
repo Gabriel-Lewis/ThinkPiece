@@ -13,13 +13,15 @@ export default class SearchBar extends React.Component {
       inputVal: '',
       searchResults: {},
       userSearchResults: [],
-      hidden: 'hidden'
+      hidden: 'hidden',
+      show: ''
     };
     this.selectName = this.selectName.bind(this);
     this.updateResults = this.updateResults.bind(this);
     this.updateUserResults = this.updateUserResults.bind(this);
     this.clearInput = this.clearInput.bind(this);
     this.focusOnSearchInput = this.focusOnSearchInput.bind(this);
+    this.showSearchField = this.showSearchField.bind(this);
 
   }
 
@@ -58,6 +60,15 @@ export default class SearchBar extends React.Component {
     this.refs.search.focus()
   }
 
+  showSearchField() {
+    console.log('it works');
+    if (this.state.show = '') {
+      this.setState({show: 'show'})
+    } else {
+      this.setState({show: ''})
+    }
+  }
+
   render() {
 
     let stories = this.state.searchResults
@@ -66,10 +77,10 @@ export default class SearchBar extends React.Component {
       <div className="search-bar">
         <div className='auto'>
           <img
-            className='search-button'
+            className={`search-button ${this.state.show}`}
             src='http://i.imgur.com/KtfgKIg.png'
             onClick={this.focusOnSearchInput}
-            onTouchStart={this.focusOnSearchInput}
+            onTouchStart={this.showSearchField}
             />
           <input
             className='search-input'
