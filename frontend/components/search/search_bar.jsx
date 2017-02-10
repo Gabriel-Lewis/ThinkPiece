@@ -21,8 +21,6 @@ export default class SearchBar extends React.Component {
     this.updateUserResults = this.updateUserResults.bind(this);
     this.clearInput = this.clearInput.bind(this);
     this.focusOnSearchInput = this.focusOnSearchInput.bind(this);
-    this.showSearchField = this.showSearchField.bind(this);
-
   }
 
   selectName(event) {
@@ -57,14 +55,15 @@ export default class SearchBar extends React.Component {
   }
 
   focusOnSearchInput() {
-    this.refs.search.focus()
-    if (this.state.show = '') {
+    console.log(this.state.show);
+    if (this.state.show === '') {
       this.setState({show: 'show'})
     } else {
       this.setState({show: ''})
     }
+    this.refs.search.focus()
   }
-  
+
   render() {
 
     let stories = this.state.searchResults
@@ -73,16 +72,17 @@ export default class SearchBar extends React.Component {
       <div className="search-bar">
         <div className='auto'>
           <img
-            className={`search-button ${this.state.show}`}
+            className='search-button'
             src='http://i.imgur.com/KtfgKIg.png'
             onClick={this.focusOnSearchInput}
-            />
+          />
           <input
-            className='search-input'
+            className={`search-input ${this.state.show}`}
             type='search'
             ref='search'
             onChange={this.selectName}
             value={this.state.inputVal}
+            onBlur={this.state.show = ''}
             placeholder='Search Thinkpiece'
           />
           <SearchResults
