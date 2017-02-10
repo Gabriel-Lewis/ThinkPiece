@@ -93,6 +93,7 @@ export default class SearchBar extends React.Component {
             placeholder='Search Thinkpiece'
           />
           <SearchResults
+            show={this.state.show}
             stories={stories}
             users={users}
             clearInput={this.clearInput}

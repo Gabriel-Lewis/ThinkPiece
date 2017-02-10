@@ -51,9 +51,9 @@ const usersResultList = (users, clearInput) => {
   }
 }
 
-const searchResultContainer = (stories, users, hidden, clearInput) => {
+const searchResultContainer = (stories, users, hidden, clearInput, show) => {
   return (
-    <div className={`search-results ${hidden}`}>
+    <div className={`search-results ${hidden} ${show}`}>
       {storyLabel}
       <div className='line'></div>
       {storyResultList(stories, clearInput)}
@@ -68,8 +68,8 @@ const searchResultContainer = (stories, users, hidden, clearInput) => {
 
 
 
-const SearchResults = ({stories, users, hidden, clearInput}) => {
-    return searchResultContainer(stories, users, hidden, clearInput)
+const SearchResults = ({stories, users, hidden, clearInput, show}) => {
+    return searchResultContainer(stories, users, hidden, clearInput, show)
 }
 
 export default SearchResults;

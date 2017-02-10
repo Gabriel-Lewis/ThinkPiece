@@ -76,7 +76,12 @@
   }
 
   .search-results {
+    display: none;
     top: 100px;
+  }
+
+  .show {
+    display: block;
   }
 
 }
