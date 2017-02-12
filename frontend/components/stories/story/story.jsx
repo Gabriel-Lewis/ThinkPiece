@@ -6,19 +6,22 @@ import {
 
 import { convertToRaw } from 'draft-js';
 import { Link, withRouter } from 'react-router';
-
+import StoryDetails from '../feed/story_details';
 import ErrorMessage from '../../shared/not_found_component';
 
 class Story extends React.Component {
 
   constructor(props) {
     super(props)
+
     this.state = {
       editorState: createEditorState(),
       editorEnabled: false
     };
-
+    this.story = this.props.story
     this.editLinkForAuthor = this.editLinkForAuthor.bind(this)
+    this.handleLike = this.handleLike.bind(this)
+    this.handleUnlike = this.handleUnlike.bind(this)
 
     this.onChange = (editorState, callback = null) => {
       if (this.state.editorEnabled) {
@@ -50,6 +53,16 @@ class Story extends React.Component {
     }
   }
 
+  handleUnlike() {
+    const id = this.props.story.id;
+    this.props.deleteLike(id);
+  }
+
+  handleLike() {
+    const id = this.props.story.id;
+    this.props.createLike(id);
+  }
+
   render() {
 
     const { editorState } = this.state;
@@ -58,6 +71,7 @@ class Story extends React.Component {
     if (!story) {
         return (<ErrorMessage />)
     }
+
     return (
       <div className='story'>
         <div className='author-header'>
@@ -66,7 +80,10 @@ class Story extends React.Component {
             className='user-image'
             src={story.user.profile_image_url}
             />
-          <div className="author-details"><p className="author-name">{story.user.name}</p><p className="author-bio">{story.user.bio}</p></div>
+          <div className="author-details">
+            <p className="author-name">{story.user.name}</p>
+            <p className="author-bio">{story.user.bio}</p>
+          </div>
         </Link>
         </div>
         <h3
@@ -77,6 +94,12 @@ class Story extends React.Component {
             onChange={this.onChange}
             />
           <div>{this.editLinkForAuthor()}</div>
+          <StoryDetails
+            unlike={this.handleUnlike}
+            like={this.handleLike}
+            liked={this.props.story.liked }
+            likeCount={this.props.story.likeCount}
+            />
       </div>
       );
   }

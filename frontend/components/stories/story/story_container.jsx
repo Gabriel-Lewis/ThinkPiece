@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchStory, updateStory, deleteStory } from '../../../actions/story_actions';
+import { createLike, deleteLike } from '../../../actions/like_actions';
+
 import Story from './story'
 
 const mapStateToProps = (state, ownProps) => {
@@ -18,7 +20,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   fetchStory: (id) => dispatch(fetchStory(id)),
   updateStory: (id) => dispatch(updateStory(id)),
-  deleteStory: (id) => dispatch(deleteStory(id))
+  deleteStory: (id) => dispatch(deleteStory(id)),
+  createLike: (id) => dispatch(createLike(id)),
+  deleteLike: (id) => dispatch(deleteLike(id))
 });
 
 export default connect(

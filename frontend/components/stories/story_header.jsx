@@ -26,9 +26,15 @@ class storyHeader extends React.Component {
           <nav>
             <Link to='/'><h3 className='logo'>Thinkpiece</h3></Link>
             <div className='header-settings'>
-              <PublishStoryModal submitStory={this.props.submitStory} setMainImg={this.props.setMainImg}/>
+              <PublishStoryModal
+                submitStory={this.props.submitStory}
+                setMainImg={this.props.setMainImg}
+              />
               <div>{this.deleteButton()}</div>
-              <SettingsModal currentUser={this.props.currentUser} handleLogout={this.handleLogout} />
+              <SettingsModal
+                currentUser={this.props.currentUser}
+                handleLogout={this.handleLogout}
+              />
             </div>
           </nav>
         </div>
