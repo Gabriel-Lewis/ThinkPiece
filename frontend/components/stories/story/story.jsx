@@ -79,7 +79,7 @@ class Story extends React.Component {
         />
     )} else {
       return (
-        <div className="story_details">
+        <div className="story-like-details">
           <button onClick={this.onModalOpen}>
             <img className='heart' src='http://i.imgur.com/6XPFTeT.png'/>
             </button>
