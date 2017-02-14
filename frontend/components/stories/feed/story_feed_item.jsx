@@ -48,6 +48,7 @@ class StoryFeedItem extends React.Component {
           Read more...
         </Link>
         <StoryDetails
+          user={this.user}
           unlike={this.handleUnlike}
           like={this.handleLike}
           liked={this.props.story.liked }

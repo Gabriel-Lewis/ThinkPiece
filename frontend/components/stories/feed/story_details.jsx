@@ -12,18 +12,30 @@ const unlikeButton = (unlike) => (
   </button>
 )
 
-export default ({liked, likeCount, unlike, like}) => {
-  if (liked) {
-    return (<div className='story-like-details'>
-      {unlikeButton(unlike)}
-      <p>{likeCount}</p>
-    </div>)
-  } else {
-    return(
-      <div className='story-like-details'>
-        {likeButton(like)}
+export default ({liked, likeCount, unlike, like, user}) => {
+  if (user) {
+    if (liked) {
+      return (<div className='story-like-details'>
+        {unlikeButton(unlike)}
         <p>{likeCount}</p>
       </div>)
+    } else {
+      return(
+        <div className='story-like-details'>
+          {likeButton(like)}
+          <p>{likeCount}</p>
+        </div>)
+    }
+  } else {
+    return (
+      <div className='story-like-details'>
+        <button onClick={alert('Must be Signed in to like')}>
+          <img className='heart' src='http://i.imgur.com/6XPFTeT.png'/>
+        </button>
+      </div>
+    )
   }
+
+
 
 }
