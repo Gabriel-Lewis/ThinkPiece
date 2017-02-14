@@ -17,6 +17,7 @@ class StoryIndex extends React.Component {
               <StoryFeedItem
                 key={story.id}
                 user={story.user}
+                currentUser={this.props.currentUser}
                 story={story}
                 currentUser={this.props.currentUser}
                 createLike={this.props.createLike}

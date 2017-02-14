@@ -1,7 +1,8 @@
 import React from 'react';
-import PublishStoryModal from './publish_story_modal';
 import { Link, withRouter, Router, hashHistory } from 'react-router';
-import SettingsModal from '../header/settings_modal';
+
+import PublishStoryModal from '../modals/publish_story_modal';
+import SettingsModal from '../modals/settings_modal';
 
 class storyHeader extends React.Component {
   constructor(props) {

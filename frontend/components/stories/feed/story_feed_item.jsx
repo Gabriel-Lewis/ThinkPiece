@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import StoryDetails from './story_details';
+import Modal from 'react-modal';
+
+// import SessionFormContainer from '../../session_form/session_form_container';
+import SessionFormModal from '../../modals/session_form_modal';
 
 
 class StoryFeedItem extends React.Component {
@@ -11,6 +15,12 @@ class StoryFeedItem extends React.Component {
     this.mainImgBlock = this.mainImgBlock.bind(this)
     this.handleLike = this.handleLike.bind(this)
     this.handleUnlike = this.handleUnlike.bind(this)
+
+    this.onModalOpen = this.onModalOpen.bind(this);
+
+    this.state = {
+      modalOpen: false
+    }
   }
 
   mainImgBlock() {
@@ -31,6 +41,37 @@ class StoryFeedItem extends React.Component {
     this.props.createLike(id);
   }
 
+  onModalOpen() {
+    this.setState({modalOpen: true});
+  }
+
+signInModal() {
+  if (!this.props.currentUser) {
+    return (
+    <div className='story-like-details'>
+
+      <button onClick={this.onModalOpen}>
+        <img className='heart' src='http://i.imgur.com/6XPFTeT.png'/>
+      </button>
+      <p>{this.props.story.likeCount}</p>
+      <SessionFormModal
+        isOpen={this.state.modalOpen}
+      />
+    </div>
+  )} else {
+    return (
+      <StoryDetails
+        currentUser={this.props.currentUser}
+        unlike={this.handleUnlike}
+        like={this.handleLike}
+        liked={this.props.story.liked }
+        likeCount={this.props.story.likeCount}
+        />
+    )
+  }
+}
+
+
   render() {
     return (
     <li className='story-index-item'>
@@ -47,13 +88,7 @@ class StoryFeedItem extends React.Component {
         <Link className='read-more-button' to={`/stories/${this.story.id}`}>
           Read more...
         </Link>
-        <StoryDetails
-          user={this.user}
-          unlike={this.handleUnlike}
-          like={this.handleLike}
-          liked={this.props.story.liked }
-          likeCount={this.props.story.likeCount}
-          />
+        {this.signInModal()}
     </li>
   );
   }

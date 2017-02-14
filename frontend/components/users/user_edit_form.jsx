@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import ImageUploadForm from '../stories/shared/image_upload_form';
+import ImageUploadForm from '../shared/image_upload_form';
 
 class UserEditForm extends React.Component{
   constructor(props) {

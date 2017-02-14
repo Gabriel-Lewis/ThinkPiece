@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import ImageUploadForm from './shared/image_upload_form';
+import ImageUploadForm from '../shared/image_upload_form';
 
 class PublishStoryModal extends React.Component{
   constructor(props) {

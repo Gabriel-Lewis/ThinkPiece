@@ -8,6 +8,7 @@ import { convertToRaw } from 'draft-js';
 import { Link, withRouter } from 'react-router';
 import StoryDetails from '../feed/story_details';
 import ErrorMessage from '../../shared/not_found_component';
+import SessionFormModal from '../../modals/session_form_modal';
 
 class Story extends React.Component {
 
@@ -16,13 +17,14 @@ class Story extends React.Component {
 
     this.state = {
       editorState: createEditorState(),
-      editorEnabled: false
+      editorEnabled: false,
+      modalOpen: false
     };
     this.story = this.props.story
     this.editLinkForAuthor = this.editLinkForAuthor.bind(this)
     this.handleLike = this.handleLike.bind(this)
     this.handleUnlike = this.handleUnlike.bind(this)
-
+    this.onModalOpen = this.onModalOpen.bind(this);
     this.onChange = (editorState, callback = null) => {
       if (this.state.editorEnabled) {
         this.setState({ editorState }, () => {
@@ -45,8 +47,7 @@ class Story extends React.Component {
       if (this.props.story.user.id === this.props.currentUser.id) {
         return (
           <div className='story-options'>
-          <Link to={`/stories/${this.props.story.id}/edit`}>Edit</Link>
-
+            <Link to={`/stories/${this.props.story.id}/edit`}>Edit</Link>
           </div>
         );
       }
@@ -61,6 +62,33 @@ class Story extends React.Component {
   handleLike() {
     const id = this.props.story.id;
     this.props.createLike(id);
+  }
+
+  onModalOpen() {
+    this.setState({modalOpen: true});
+  }
+
+  storyLikeButton() {
+    if (this.props.currentUser) {
+      return (
+        <StoryDetails
+        unlike={this.handleUnlike}
+        like={this.handleLike}
+        liked={this.props.story.liked }
+        likeCount={this.props.story.likeCount}
+        />
+    )} else {
+      return (
+        <div className="story_details">
+          <button onClick={this.onModalOpen}>
+            <img className='heart' src='http://i.imgur.com/6XPFTeT.png'/>
+            </button>
+          <p>{this.props.story.likeCount}</p>
+          <SessionFormModal
+            isOpen={this.state.modalOpen}
+          />
+      </div>
+  )}
   }
 
   render() {
@@ -94,12 +122,7 @@ class Story extends React.Component {
             onChange={this.onChange}
             />
           <div>{this.editLinkForAuthor()}</div>
-          <StoryDetails
-            unlike={this.handleUnlike}
-            like={this.handleLike}
-            liked={this.props.story.liked }
-            likeCount={this.props.story.likeCount}
-            />
+          <div>{this.storyLikeButton()}</div>
       </div>
       );
   }

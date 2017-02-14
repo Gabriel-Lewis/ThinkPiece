@@ -1,8 +1,10 @@
 import React from 'react';
 import Modal from 'react-modal';
+
 import SessionFormContainer from '../session_form/session_form_container';
-import SettingsModal from './settings_modal';
+import SettingsModal from '../modals/settings_modal';
 import SearchBar from '../search/search_bar';
+import SignInModal from '../modals/sigin_modal';
 
 import { Link, withRouter, Router, hashHistory } from 'react-router';
 
@@ -10,15 +12,14 @@ class Header extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      modalOpen: false,
-      buttonHidden: false
+      modalOpen: false
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.onModalOpen = this.onModalOpen.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
   }
 
-  handleClick() {
+  onModalOpen() {
     this.setState({modalOpen: true});
   }
 
@@ -36,21 +37,12 @@ class Header extends React.Component {
           <nav>
             <Link to='/'><h3 className='logo'>Thinkpiece</h3></Link>
             <button
-              onClick={this.handleClick}
+              onClick={this.onModalOpen}
               >Sign In / Sign Up</button>
-              <Modal
-                className='modal'
-                overlayClassName='overlay'
-                isOpen={this.state.modalOpen}
-                contentLabel="Login Modal"
-                onRequestClose={this.onModalClose}
-                >
-                <SessionFormContainer open={this.state.modalOpen} close={this.onModalClose} />
-                <button
-                  onClick={this.onModalClose}
-                  className='modal-close'
-                  >×</button>
-              </Modal>
+            <SignInModal
+              isOpen={this.state.modalOpen}
+              close={this.onModalClose}
+               />
             </nav>
         </div>
       )
