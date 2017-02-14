@@ -97,7 +97,7 @@ class Story extends React.Component {
     const story = this.props.story;
 
     if (!story) {
-        return (<ErrorMessage />)
+        return (<div className="cp-spinner cp-heart"></div>)
     }
 
     return (
