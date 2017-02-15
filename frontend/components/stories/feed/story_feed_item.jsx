@@ -25,7 +25,7 @@ class StoryFeedItem extends React.Component {
 
   mainImgBlock() {
     if (this.story.main_image_url) {
-        return (<img src={this.story.main_image_url} />)
+        return (<img src={`${this.story.main_image_url}`} />)
     } else {
       return <div></div>
     }

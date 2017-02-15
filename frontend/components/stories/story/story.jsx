@@ -79,6 +79,7 @@ class Story extends React.Component {
         />
     )} else {
       return (
+      <div className='after-story-details' >
         <div className="story-like-details">
           <button onClick={this.onModalOpen}>
             <img className='heart' src='http://i.imgur.com/6XPFTeT.png'/>
@@ -88,6 +89,7 @@ class Story extends React.Component {
             isOpen={this.state.modalOpen}
           />
       </div>
+    </div>
   )}
   }
 
@@ -96,7 +98,7 @@ class Story extends React.Component {
     const { editorState } = this.state;
     const story = this.props.story;
 
-    if (!story) {
+    if (!story || story === {}) {
         return (<div className="cp-spinner cp-heart"></div>)
     }
 
