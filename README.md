@@ -15,6 +15,7 @@ Thinkpiece is a single page web app inspired by Medium.  It utilizes Ruby on Rai
 When users sign up their data is encrypted using the ruby gem [BCrypt](https://github.com/codahale/bcrypt-ruby). Once a user logs in they're browser stores a session token to keep them logged when they come to Thinkpiece again.
 
 ### Stories
+
 <img alt="Gabriel Lewis" width='700px' src="http://i.imgur.com/y1zSeQm.png">
 
 **Stories are the main feature of Thinkpiece.**
@@ -50,7 +51,6 @@ Thinkpiece's visual component's are built with React, and redux. Each of the maj
 ```javascript
 render() {
   return (
-
     <div className='background'>
       <ul className='story-feed'>
         {
@@ -63,7 +63,6 @@ render() {
               createLike={this.props.createLike}
               deleteLike={this.props.deleteLike}
             />
-
           ))
         }
       </ul>
@@ -76,15 +75,16 @@ The StoryFeed Component creates StoryFeedItem's using the data it receives from 
 
 ```javascript
 <Provider store={store}>
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path='/' component={App} >
       <IndexRoute component={StoryIndexContainer} />
       <Route path="/stories" component={StoryIndexContainer} />
       <Route path="/stories/:storyId" component={StoryContainer} onEnter={onEnterFetchStory}/>
-      <Route path="/users/:userId" component={UserProfileContainer} onEnter={onEnterFetchUser}/>
+      <Route path="/users/:username" component={UserProfileContainer} onEnter={onEnterFetchUser}/>
     </Route>
     <Route path='/new-story' component={NewStoryContainer} />
     <Route path="/stories/:storyId/edit" component={StoryFormContainer} onEnter={onEnterFetchStory} />
+    <Route path='*' component={NotFoundComponent} />
   </Router>
 </Provider>
 ```
