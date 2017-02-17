@@ -45,6 +45,7 @@ class SessionForm extends React.Component {
   guestLoginIn() {
     const user = {username:'guest', password:'password'}
     this.props.login({user})
+    this.props.close()
   }
 
   guestLoginInButton() {

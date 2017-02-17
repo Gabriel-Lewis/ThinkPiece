@@ -5,7 +5,7 @@ import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-ro
 import { fetchStory, fetchUsersStories } from '../actions/story_actions'
 import { fetchUser } from '../actions/user_actions'
 
-import App from './app';
+import AppContainer from './app_container';
 import StoryIndexContainer from './stories/feed/story_feed_container';
 import StoryFormContainer from './stories/story_form_container';
 import StoryContainer from './stories/story/story_container';
@@ -26,7 +26,7 @@ const Root = ({ store }) => {
   return (
     <Provider store={store}>
       <Router history={browserHistory}>
-        <Route path='/' component={App} >
+        <Route path='/' component={AppContainer} >
           <IndexRoute component={StoryIndexContainer} />
           <Route path="/stories" component={StoryIndexContainer} />
           <Route path="/stories/:storyId" component={StoryContainer} onEnter={onEnterFetchStory}/>

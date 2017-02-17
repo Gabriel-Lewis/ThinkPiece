@@ -19,11 +19,11 @@ class StoryIndex extends React.Component {
                 user={story.user}
                 currentUser={this.props.currentUser}
                 story={story}
+                open={this.context.open}
                 currentUser={this.props.currentUser}
                 createLike={this.props.createLike}
                 deleteLike={this.props.deleteLike}
               />
-
             ))
           }
         </ul>
@@ -31,5 +31,10 @@ class StoryIndex extends React.Component {
     );
   }
 }
+
+StoryIndex.contextTypes = {
+  open: React.PropTypes.func
+};
+
 
 export default withRouter(StoryIndex);
