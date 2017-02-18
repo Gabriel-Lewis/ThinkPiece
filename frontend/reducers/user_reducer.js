@@ -1,12 +1,11 @@
-import { RECEIVE_USER, REMOVE_USER} from '../actions/user_actions'
-import merge from 'lodash/merge';
+import { RECEIVE_USER, REMOVE_USER } from '../actions/user_actions';
 
 const _nullUser = Object.freeze({
   errors: [],
   followers: [],
   following: [],
   stories: [],
-  id: 0
+  id: 0,
 });
 
 
@@ -15,7 +14,7 @@ const UserReducer = (oldState = _nullUser, action) => {
     case RECEIVE_USER:
       return action.user;
     case REMOVE_USER:
-      return _nullUser
+      return _nullUser;
     default:
       return oldState;
   }

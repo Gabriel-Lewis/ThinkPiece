@@ -3,9 +3,6 @@ import { searchStories } from '../../util/story_api_util';
 import { searchUsers } from '../../util/user_api_util';
 import SearchResults from './search_results';
 
-import {Link} from 'react-router';
-
-
 export default class SearchBar extends React.Component {
   constructor(props) {
     super(props);
@@ -14,7 +11,7 @@ export default class SearchBar extends React.Component {
       searchResults: {},
       userSearchResults: [],
       hidden: 'hidden',
-      show: ''
+      show: '',
     };
     this.selectName = this.selectName.bind(this);
     this.updateResults = this.updateResults.bind(this);
@@ -25,72 +22,71 @@ export default class SearchBar extends React.Component {
   }
 
   selectName(event) {
-    let name = event.currentTarget.value;
-    this.setState({inputVal: name});
-    if (event.currentTarget.value != "") {
-      this.setState({hidden: ''})
-      searchStories(event.currentTarget.value, this.updateResults)
-      searchUsers(event.currentTarget.value, this.updateUserResults)
+    const name = event.currentTarget.value;
+    this.setState({ inputVal: name });
+    if (event.currentTarget.value !== '') {
+      this.setState({ hidden: '' });
+      searchStories(event.currentTarget.value, this.updateResults);
+      searchUsers(event.currentTarget.value, this.updateUserResults);
     } else {
-      this.setState({hidden: 'hidden'})
+      this.setState({ hidden: 'hidden' });
     }
   }
 
-  updateResults (data) {
+  updateResults(data) {
     this.setState({
-      searchResults: data
-    })
+      searchResults: data,
+    });
   }
 
-  updateUserResults (data) {
+  updateUserResults(data) {
     this.setState({
-      userSearchResults: data
-    })
+      userSearchResults: data,
+    });
   }
 
   clearInput() {
     this.setState({
       inputVal: '',
-      hidden: 'hidden'
-    })
+      hidden: 'hidden',
+    });
   }
 
   hideSearchInput() {
     this.setState({
-      show: ''
-    })
+      show: '',
+    });
   }
 
   focusOnSearchInput() {
-    console.log(this.state.show);
     if (this.state.show === '') {
-      this.setState({show: 'show'})
+      this.setState({ show: 'show' });
     } else {
-      this.setState({show: ''})
+      this.setState({ show: '' });
     }
-    this.refs.search.focus()
+    this.refs.search.focus();
   }
 
   render() {
-
-    let stories = this.state.searchResults
-    let users = this.state.userSearchResults
-    return(
+    const stories = this.state.searchResults;
+    const users = this.state.userSearchResults;
+    return (
       <div className="search-bar">
-        <div className='auto'>
+        <div className="auto">
           <img
-            className='search-button'
-            src='http://i.imgur.com/KtfgKIg.png'
+            alt="search button"
+            className="search-button"
+            src="http://i.imgur.com/KtfgKIg.png"
             onClick={this.focusOnSearchInput}
           />
           <input
             className={`search-input ${this.state.show}`}
-            type='search'
-            ref='search'
+            type="search"
+            ref="search"
             onChange={this.selectName}
             onBlur={this.hideSearchInput}
             value={this.state.inputVal}
-            placeholder='Search Thinkpiece'
+            placeholder="Search Thinkpiece"
           />
           <SearchResults
             show={this.state.show}
@@ -103,4 +99,4 @@ export default class SearchBar extends React.Component {
       </div>
     );
   }
-};
+}

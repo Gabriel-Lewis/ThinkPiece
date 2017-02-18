@@ -1,15 +1,15 @@
 import React from 'react';
+import { withRouter } from 'react-router';
+
 import StoryFeedItem from './story_feed_item';
-import {withRouter} from 'react-router'
-import HeaderContainer from '../../header/header_container'
 
 class ProfileStoryFeed extends React.Component {
 
   render() {
     return (
 
-      <div className='profile-background'>
-        <ul className='story-feed'>
+      <div className="profile-background">
+        <ul className="story-feed">
           {
             this.props.stories.map(story => (
               <StoryFeedItem
@@ -19,7 +19,7 @@ class ProfileStoryFeed extends React.Component {
                 currentUser={this.props.currentUser}
                 createLike={this.props.createLike}
                 deleteLike={this.props.deleteLike}
-                />
+              />
             ))
           }
         </ul>

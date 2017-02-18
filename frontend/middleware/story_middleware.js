@@ -1,3 +1,5 @@
+import { browserHistory } from 'react-router';
+
 import {
   receiveAllStories,
   receiveStory,
@@ -7,7 +9,7 @@ import {
   FETCH_STORIES,
   UPDATE_STORY,
   DELETE_STORY,
-  FETCH_USER_STORIES
+  FETCH_USER_STORIES,
    } from '../actions/story_actions';
 
 import {
@@ -16,16 +18,14 @@ import {
   updateStory,
   fetchStories,
   fetchStory,
-  fetchUsersStories
+  fetchUsersStories,
 } from '../util/story_api_util';
-import { browserHistory } from 'react-router';
 
-const StoryMiddleware = ({getState, dispatch}) => next => action => {
-
+const StoryMiddleware = ({ dispatch }) => next => (action) => {
   let success;
-  let receiveAllStoriesSuccess = stories => dispatch(receiveAllStories(stories));
-  let receiveStorySuccess = story => dispatch(receiveStory(story));
-  let removeStorySuccess = story => dispatch(removeStory(story));
+  const receiveAllStoriesSuccess = stories => dispatch(receiveAllStories(stories));
+  const receiveStorySuccess = story => dispatch(receiveStory(story));
+  const removeStorySuccess = story => dispatch(removeStory(story));
   switch (action.type) {
     case FETCH_STORY:
       fetchStory(action.id, receiveStorySuccess);
@@ -37,21 +37,21 @@ const StoryMiddleware = ({getState, dispatch}) => next => action => {
       fetchStories(receiveAllStoriesSuccess);
       return next(action);
     case CREATE_STORY:
-      success = story => {
+      success = (story) => {
         dispatch(receiveStory(story));
         browserHistory.push(`/stories/${story.id}`);
       };
       createStory(action.story, success);
       return next(action);
     case UPDATE_STORY:
-      success = story => {
+      success = (story) => {
         dispatch(receiveStory(story));
         browserHistory.push(`/stories/${story.id}`);
       };
-      updateStory(action.story, success)
+      updateStory(action.story, success);
       return next(action);
     case DELETE_STORY:
-      success = story => {
+      success = () => {
         browserHistory.push('/');
       };
       deleteStory(action.id, success);
@@ -59,6 +59,6 @@ const StoryMiddleware = ({getState, dispatch}) => next => action => {
     default:
       return next(action);
   }
-}
+};
 
 export default StoryMiddleware;

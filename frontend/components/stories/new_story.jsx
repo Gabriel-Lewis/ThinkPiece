@@ -1,30 +1,30 @@
 import React from 'react';
 import {
   Editor,
-  createEditorState
+  createEditorState,
 } from 'medium-draft';
 
-import { convertToRaw, getBlockMap } from 'draft-js';
+import { convertToRaw } from 'draft-js';
 
 import CustomImageSideButton from './shared/custom_image_side_button';
-import StoryHeader from './story_header'
+import StoryHeader from './story_header';
 
 class NewStory extends React.Component {
 
   constructor(props) {
-    super(props)
+    super(props);
 
     this.sideButtons = [{
       title: 'Image',
-      component: CustomImageSideButton
+      component: CustomImageSideButton,
     }];
 
     this.state = {
       editorState: createEditorState(),
       editorEnabled: true,
-      title: "",
-      body: "",
-      main_image_url: ""
+      title: '',
+      body: '',
+      main_image_url: '',
     };
     this.publishStory = this.publishStory.bind(this);
     this.setMainImg = this.setMainImg.bind(this);
@@ -40,23 +40,27 @@ class NewStory extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.refs.editor.focus();
+  }
+
+  setMainImg(url) {
+    this.setState({ main_image_url: url });
+  }
+
   update(field) {
     return (e) => {
-      this.setState({[field]: e.target.value});
+      this.setState({ [field]: e.target.value });
     };
   }
 
   publishStory() {
-    let body = JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()))
-    this.props.createStory({title: this.state.title, body: body, userId: this.props.currentUser.id, main_image_url: this.state.main_image_url })
-  }
-
-  setMainImg(url) {
-    this.setState({main_image_url: url})
-  }
-
-  componentDidMount() {
-    this.refs.editor.focus();
+    const body = JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()));
+    this.props.createStory({
+      title: this.state.title,
+      body,
+      userId: this.props.currentUser.id,
+      main_image_url: this.state.main_image_url });
   }
 
   render() {
@@ -67,24 +71,24 @@ class NewStory extends React.Component {
           submitStory={this.publishStory}
           currentUser={this.props.currentUser}
           setMainImg={this.setMainImg}
-          pageType='new'
-          />
-      <div className='new-story'>
-        <input
-          className='new-story-title'
-          placeholder='Title'
-          type='text'
-          onChange={this.update('title')}
-          />
-      <Editor
-        ref="editor"
-        editorState={editorState}
-        onChange={this.onChange}
-        sideButtons={this.sideButtons}
-        placeholder='Tell your story...'
+          pageType="new"
         />
+        <div className="new-story">
+          <input
+            className="new-story-title"
+            placeholder="Title"
+            type="text"
+            onChange={this.update('title')}
+          />
+          <Editor
+            ref="editor"
+            editorState={editorState}
+            onChange={this.onChange}
+            sideButtons={this.sideButtons}
+            placeholder="Tell your story..."
+          />
+        </div>
       </div>
-    </div>
     );
   }
 }

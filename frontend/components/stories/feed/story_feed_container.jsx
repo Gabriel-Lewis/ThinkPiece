@@ -5,16 +5,16 @@ import StoryIndex from './story_feed';
 
 const mapStateToProps = state => ({
   stories: Object.keys(state.stories).map(id => state.stories[id]),
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   fetchStories: () => dispatch(fetchStories()),
-  createLike: (id) => dispatch(createLike(id)),
-  deleteLike: (id) => dispatch(deleteLike(id))
+  createLike: id => dispatch(createLike(id)),
+  deleteLike: id => dispatch(deleteLike(id)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(StoryIndex);

@@ -21,5 +21,7 @@ bundle.js
 # Ignore Byebug command history file.
 .byebug_history
 
+.eslintrc.json
+
 # Ignore application configuration
 /config/application.yml

@@ -3,25 +3,25 @@ export const signup = (user, success, error) => {
     url: '/api/users',
     method: 'POST',
     data: user,
-    success: success,
-    error: error
-  })
-}
+    success,
+    error,
+  });
+};
 
 export const login = (user, success, error) => {
   $.ajax({
     url: '/api/session',
     method: 'POST',
     data: user,
-    success: success,
-    error: error
-  })
-}
+    success,
+    error,
+  });
+};
 
-export const logout = success => {
+export const logout = (success) => {
   $.ajax({
     url: '/api/session',
     method: 'DELETE',
-    success: success
+    success,
   });
 };

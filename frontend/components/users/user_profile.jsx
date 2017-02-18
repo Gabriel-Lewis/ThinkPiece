@@ -1,50 +1,50 @@
 import React from 'react';
-import UserProfileEditModal from './user_profile_edit_modal'
+import UserProfileEditModal from './user_profile_edit_modal';
 import ProfileStoryFeed from '../stories/feed/profile_story_feed';
 
 import ErrorMessage from './../shared/not_found_component';
 
 class UserProfile extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.userProfileButtons =this.userProfileButtons.bind(this)
-    this.handleFollow = this.handleFollow.bind(this)
-    this.handleUnfollow = this.handleUnfollow.bind(this)
-    this.unfollowButton = this.unfollowButton.bind(this)
-    this.followButton = this.followButton.bind(this)
-    this.userFollowerCount = this.userFollowerCount.bind(this)
+    this.userProfileButtons = this.userProfileButtons.bind(this);
+    this.handleFollow = this.handleFollow.bind(this);
+    this.handleUnfollow = this.handleUnfollow.bind(this);
+    this.unfollowButton = this.unfollowButton.bind(this);
+    this.followButton = this.followButton.bind(this);
+    this.userFollowerCount = this.userFollowerCount.bind(this);
   }
 
   componentWillUnmount() {
-    this.props.removeUser(this.props.user)
+    this.props.removeUser(this.props.user);
   }
 
   handleFollow() {
-    this.props.follow(this.props.user.id)
+    this.props.follow(this.props.user.id);
   }
 
   handleUnfollow() {
-    this.props.unfollow(this.props.user.id)
+    this.props.unfollow(this.props.user.id);
   }
 
-  unfollowButton () {
+  unfollowButton() {
     return (<button
       onClick={this.handleUnfollow}
-      className='unfollow-button button'
-      >Following</button>)
+      className="unfollow-button button"
+    >Following</button>);
   }
 
   followButton() {
     return (<button
       onClick={this.handleFollow}
-      className='follow-button button'
-      >Follow</button>)
+      className="follow-button button"
+    >Follow</button>);
   }
-  userFollowerCount(){
+  userFollowerCount() {
     if (this.props.user) {
       return (
-        <div className='followerCountLabels'>
+        <div className="followerCountLabels">
           <p>
             <span>
               <span className="follower-number">
@@ -54,7 +54,7 @@ class UserProfile extends React.Component {
               <span className="follower-number">
                 {this.props.user.followers.length}</span>Followers
             </span>
-            </p>
+          </p>
         </div>
       );
     }
@@ -68,51 +68,53 @@ class UserProfile extends React.Component {
           <UserProfileEditModal
             currentUser={this.props.currentUser}
             updateUser={this.props.updateUser}
-            /> )
+          />);
       } else if (this.props.following) {
-        return (this.unfollowButton())
-      } else {
-        return (this.followButton())
+        return (this.unfollowButton());
       }
+      return (this.followButton());
     }
   }
 
   render() {
     const user = this.props.user;
 
-    if (user.id == 0) {
-        return (<ErrorMessage />)
+    if (user.id === 0) {
+      return (<ErrorMessage />);
     }
 
     return (
       <div>
-      <div className='full-user-profile'>
-      <div className='user-profile'>
-        <div className='user-profile-details'>
-        <div className='hero-description' >
-          <h1 className='user-name'>{user.name}</h1>
-          <p className='user-bio'>{user.bio}</p>
-        </div>
-          <div className='float-right'>
-            <img className='profile-image user-image' src={user.profile_image_url} />
+        <div className="full-user-profile">
+          <div className="user-profile">
+            <div className="user-profile-details">
+              <div className="hero-description" >
+                <h1 className="user-name">{user.name}</h1>
+                <p className="user-bio">{user.bio}</p>
+              </div>
+              <div className="float-right">
+                <img
+                  alt={user.name}
+                  className="profile-image user-image"
+                  src={user.profile_image_url}
+                />
+              </div>
+            </div>
+            {this.userFollowerCount()}
+            {this.userProfileButtons()}
           </div>
         </div>
-        {this.userFollowerCount()}
-        {this.userProfileButtons()}
-      </div>
-      </div>
-      <ProfileStoryFeed
-        createLike={this.props.createLike}
-        deleteLike={this.props.deleteLike}
-        currentUser={this.props.currentUser}
-        user={user}
-        stories={this.props.stories}
+        <ProfileStoryFeed
+          createLike={this.props.createLike}
+          deleteLike={this.props.deleteLike}
+          currentUser={this.props.currentUser}
+          user={user}
+          stories={this.props.stories}
         />
-    </div>
-      );
-    }
+      </div>
+    );
+  }
 }
-
 
 
 export default UserProfile;

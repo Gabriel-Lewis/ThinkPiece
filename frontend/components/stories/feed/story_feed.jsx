@@ -1,6 +1,7 @@
 import React from 'react';
+import { withRouter } from 'react-router';
+
 import StoryFeedItem from './story_feed_item';
-import {withRouter} from 'react-router'
 
 class StoryIndex extends React.Component {
   componentDidMount() {
@@ -10,8 +11,8 @@ class StoryIndex extends React.Component {
   render() {
     return (
 
-      <div className='background'>
-        <ul className='story-feed'>
+      <div className="background">
+        <ul className="story-feed">
           {
             this.props.stories.map(story => (
               <StoryFeedItem
@@ -33,7 +34,7 @@ class StoryIndex extends React.Component {
 }
 
 StoryIndex.contextTypes = {
-  open: React.PropTypes.func
+  open: React.PropTypes.func,
 };
 
 

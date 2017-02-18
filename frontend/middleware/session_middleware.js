@@ -2,14 +2,14 @@ import { receiveCurrentUser, receiveErrors, LOGIN, LOGOUT, SIGNUP } from '../act
 import { fetchStories } from '../actions/story_actions';
 import { login, signup, logout } from '../util/session_api_util';
 
-const SessionMiddleware = ({getState, dispatch}) => next => action => {
-  const successCallback = user => {
+const SessionMiddleware = ({ dispatch }) => next => (action) => {
+  const successCallback = (user) => {
     dispatch(receiveCurrentUser(user)),
-    dispatch(fetchStories())
+    dispatch(fetchStories());
   };
   const logoutCallback = () => {
-    dispatch(fetchStories())
-  }
+    dispatch(fetchStories());
+  };
   const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON));
   switch (action.type) {
     case LOGIN:
@@ -19,10 +19,10 @@ const SessionMiddleware = ({getState, dispatch}) => next => action => {
       signup(action.user, successCallback, errorCallback);
       return next(action);
     case LOGOUT:
-      logout(logoutCallback)
+      logout(logoutCallback);
     default:
       return next(action);
   }
-}
+};
 
 export default SessionMiddleware;

@@ -1,41 +1,39 @@
-import React from 'react';
-import { ImageSideButton, Block, addNewBlock, createEditorState, Editor } from 'medium-draft';
+import { ImageSideButton, Block, addNewBlock } from 'medium-draft';
 
 class CustomImageSideButton extends ImageSideButton {
 
   constructor(props) {
-    super(props)
-    this.onChange = this.onChange.bind(this)
+    super(props);
+    this.onChange = this.onChange.bind(this);
   }
 
   onChange(e) {
-
-    var formData = new FormData();
+    const formData = new FormData();
     let photo;
-    formData.append("image", e.target.files[0]);
+    formData.append('image', e.target.files[0]);
     $.ajax({
-      url: "https://api.imgur.com/3/image",
-      type: "POST",
-      datatype: "json",
+      url: 'https://api.imgur.com/3/image',
+      type: 'POST',
+      datatype: 'json',
       headers: {
-        "Authorization": "Client-ID e8971a94c95382e"
+        Authorization: 'Client-ID e8971a94c95382e',
       },
       data: formData,
       success: (response) => {
         photo = response.data.link;
-          this.props.setEditorState(addNewBlock(
+        this.props.setEditorState(addNewBlock(
             this.props.getEditorState(),
             Block.IMAGE, {
               src: photo,
-            }
+            },
           ));
       },
       cache: false,
       contentType: false,
-      processData: false
+      processData: false,
     });
     this.props.close();
   }
 }
 
-export default CustomImageSideButton
+export default CustomImageSideButton;

@@ -1,17 +1,17 @@
-export const createLike = (story_id, success) => {
+export const createLike = (storyId, success) => {
   $.ajax({
     url: '/api/likes',
     method: 'POST',
-    data: { story_id },
-    success: success
-  })
-}
+    data: { storyId },
+    success,
+  });
+};
 
-export const deleteLike = (story_id, success) => {
+export const deleteLike = (storyId, success) => {
   $.ajax({
     url: '/api/likes/remove',
     method: 'DELETE',
-    data: { story_id },
-    success
-    })
-}
+    data: { storyId },
+    success,
+  });
+};
