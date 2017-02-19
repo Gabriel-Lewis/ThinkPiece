@@ -29,15 +29,31 @@ const Root = ({ store }) => {
         <Route path="/" component={AppContainer} >
           <IndexRoute component={StoryIndexContainer} />
           <Route path="/stories" component={StoryIndexContainer} />
-          <Route path="/stories/:storyId" component={StoryContainer} onEnter={onEnterFetchStory} />
-          <Route path="/users/:username" component={UserProfileContainer} onEnter={onEnterFetchUser} />
+          <Route
+            path="/stories/:storyId"
+            component={StoryContainer}
+            onEnter={onEnterFetchStory}
+          />
+          <Route
+            path="/users/:username"
+            component={UserProfileContainer}
+            onEnter={onEnterFetchUser}
+          />
         </Route>
         <Route path="/new-story" component={NewStoryContainer} />
-        <Route path="/stories/:storyId/edit" component={StoryFormContainer} onEnter={onEnterFetchStory} />
+        <Route
+          path="/stories/:storyId/edit"
+          component={StoryFormContainer}
+          onEnter={onEnterFetchStory}
+        />
         <Route path="*" component={NotFoundComponent} />
       </Router>
     </Provider>
   );
+};
+
+Root.propTypes = {
+  store: React.PropTypes.shape.isRequired,
 };
 
 export default Root;

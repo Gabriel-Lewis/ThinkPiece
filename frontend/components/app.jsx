@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 import HeaderContainer from './header/header_container';
 import SignInModal from './modals/sigin_modal';
@@ -53,6 +53,13 @@ class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {
+  currentUser: React.PropTypes.shape.isRequired,
+  location: React.PropTypes.shape.isRequired,
+  children: React.PropTypes.element.isRequired,
+  logout: React.PropTypes.func.isRequired,
+};
 
 App.childContextTypes = {
   isOpen: React.PropTypes.bool,

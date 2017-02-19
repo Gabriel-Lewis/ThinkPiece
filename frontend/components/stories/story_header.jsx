@@ -19,6 +19,7 @@ class storyHeader extends React.Component {
     if (this.props.deleteStory) {
       return (<button onClick={this.props.deleteStory}>Delete</button>);
     }
+    return (<div />);
   }
 
   newStoryHeader() {
@@ -46,5 +47,13 @@ class storyHeader extends React.Component {
     return this.newStoryHeader();
   }
 }
+
+storyHeader.propTypes = {
+  currentUser: React.PropTypes.shape.isRequired,
+  logout: React.PropTypes.func.isRequired,
+  submitStory: React.PropTypes.func.isRequired,
+  deleteStory: React.PropTypes.func.isRequired,
+  setMainImg: React.PropTypes.func.isRequired,
+};
 
 export default storyHeader;
