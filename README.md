@@ -8,8 +8,6 @@ Thinkpiece is a single page web app inspired by Medium.  It utilizes Ruby on Rai
 
 ### User Account Creation and Login
 
-<img alt="Thinkpiece" width='700px' src="http://i.imgur.com/6RAzbEk.png">
-
 **Users can Sign up with Thinkpiece knowing their information is secure**
 
 When users sign up their data is encrypted using the ruby gem [BCrypt](https://github.com/codahale/bcrypt-ruby). Once a user logs in they're browser stores a session token to keep them logged when they come to Thinkpiece again.
@@ -38,7 +36,7 @@ One of Medium's best features is it's easy to use text editor. Using the [Medium
 
 ### Image Upload
 
-<img alt="image upload" width='700px' src="http://i.imgur.com/K1WCa49.gif">
+<img alt="Image Uploading" width='700px' src="http://i.imgur.com/K1WCa49.gif">
 
 **A Picture is worth a thousand words**
 
@@ -92,7 +90,7 @@ The StoryFeed Component creates StoryFeedItem's using the data it receives from 
 [React Modal](https://github.com/reactjs/react-modal) was used to display modals throughout this project. It was used on the login page to recreate a similar login experience to Medium's.
 
 Thinkpiece's backend is supported with PostgreSQL.
- 
+
 ### Contact
 You can reach me on
 
