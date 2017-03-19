@@ -87,7 +87,7 @@ The StoryFeed Component creates StoryFeedItem's using the data it receives from 
 </Provider>
 ```
 
-[React Modal](https://github.com/reactjs/react-modal) was used to display modals throughout this project. It was used on the login page to recreate a similar login experience to Medium's.
+[React Modal](https://github.com/reactjs/react-modal) was used to display modals throughout this project. It was used on the login page to recreate a similar login experience to Medium's, as well as the edit profile modal.
 
 Thinkpiece's backend is supported with PostgreSQL.
 
