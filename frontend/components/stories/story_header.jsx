@@ -5,17 +5,12 @@ import PublishStoryModal from '../modals/publish_story_modal';
 import SettingsModal from '../modals/settings_modal';
 
 class storyHeader extends React.Component {
-  constructor(props) {
-    super(props);
-    this.deleteButton = this.deleteButton.bind(this);
-    this.handleLogout = this.handleLogout.bind(this);
-  }
 
-  handleLogout() {
+  handleLogout = () => {
     this.props.logout();
   }
 
-  deleteButton() {
+  deleteButton = () => {
     if (this.props.deleteStory) {
       return (<button onClick={this.props.deleteStory}>Delete</button>);
     }

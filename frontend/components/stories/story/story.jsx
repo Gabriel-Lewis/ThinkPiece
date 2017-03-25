@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  Editor,
-  createEditorState,
-} from 'medium-draft';
+import { Editor, createEditorState } from 'medium-draft';
 import { Link, withRouter } from 'react-router';
 
 import StoryDetails from '../feed/story_details';

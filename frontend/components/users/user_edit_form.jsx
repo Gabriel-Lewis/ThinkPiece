@@ -4,20 +4,18 @@ import ImageUploadForm from '../shared/image_upload_form';
 class UserEditForm extends React.Component {
   constructor(props) {
     super(props);
-    this.setMainImg = this.setMainImg.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       id: props.currentUser.id,
     };
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.props.updateUser(this.state);
     this.props.close();
   }
 
-  setMainImg(url) {
+  setMainImg = (url) => {
     this.setState({ profile_image_url: url });
   }
 

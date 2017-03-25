@@ -1,15 +1,12 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Modal from 'react-modal';
 
 import SessionFormContainer from '../session_form/session_form_container';
 
-class SessionFormModal extends React.Component {
+class SessionFormModal extends Component {
 
   constructor(props) {
     super(props);
-
-    this.onModalOpen = this.onModalOpen.bind(this);
-    this.onModalClose = this.onModalClose.bind(this);
 
     this.state = {
       modalOpen: false,
@@ -22,11 +19,11 @@ class SessionFormModal extends React.Component {
     });
   }
 
-  onModalOpen() {
+  onModalOpen = () => {
     this.setState({ modalOpen: true });
   }
 
-  onModalClose() {
+  onModalClose = () => {
     this.setState({ modalOpen: false });
   }
 

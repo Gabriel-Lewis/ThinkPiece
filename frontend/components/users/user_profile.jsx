@@ -1,47 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
+
 import UserProfileEditModal from './user_profile_edit_modal';
 import ProfileStoryFeed from '../stories/feed/profile_story_feed';
-
 import ErrorMessage from './../shared/not_found_component';
 
-class UserProfile extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.userProfileButtons = this.userProfileButtons.bind(this);
-    this.handleFollow = this.handleFollow.bind(this);
-    this.handleUnfollow = this.handleUnfollow.bind(this);
-    this.unfollowButton = this.unfollowButton.bind(this);
-    this.followButton = this.followButton.bind(this);
-    this.userFollowerCount = this.userFollowerCount.bind(this);
-  }
+class UserProfile extends Component {
 
   componentWillUnmount() {
     this.props.removeUser(this.props.user);
   }
 
-  handleFollow() {
+  handleFollow = () => {
     this.props.follow(this.props.user.id);
   }
 
-  handleUnfollow() {
+  handleUnfollow = () => {
     this.props.unfollow(this.props.user.id);
   }
 
-  unfollowButton() {
-    return (<button
+  unfollowButton = () => (
+    <button
       onClick={this.handleUnfollow}
       className="unfollow-button button"
-    >Following</button>);
-  }
+    >Following</button>
+  )
 
-  followButton() {
-    return (<button
-      onClick={this.handleFollow}
-      className="follow-button button"
-    >Follow</button>);
-  }
-  userFollowerCount() {
+  followButton = () => (
+    <button onClick={this.handleFollow} className="follow-button button" >Follow</button>
+  )
+
+  userFollowerCount = () => {
     if (this.props.user) {
       return (
         <div className="followerCountLabels">
@@ -61,7 +49,7 @@ class UserProfile extends React.Component {
   }
 
 
-  userProfileButtons() {
+  userProfileButtons = () => {
     if (this.props.user && this.props.currentUser) {
       if (this.props.user.id === this.props.currentUser.id) {
         return (

@@ -1,11 +1,13 @@
 class Api::LikesController < ApplicationController
   def create
-    id = params[:story_id].to_i
+    id = params[:storyId]
+    print("#{id} this is the ID asdfj;aksjdf;akjsd;flkajs;dfklja;sdlkfja;lskdjf;akljsdf;lkajsdf")
     like = Like.new(
       user_id: current_user.id,
       story_id: id
     )
     @story = Story.find(id)
+
     if like.save
       render 'api/stories/show'
     else
@@ -14,7 +16,7 @@ class Api::LikesController < ApplicationController
   end
 
   def remove
-    id = params[:story_id].to_i
+    id = params[:storyId].to_i
     like = Like.find_by( user_id: current_user.id, story_id: id )
     @story = Story.find(id)
     like.destroy

@@ -1,19 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Modal from 'react-modal';
+
 import UserEditForm from './user_edit_form';
 
-class UserProfileEditModal extends React.Component {
+class UserProfileEditModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
       modalIsOpen: false,
     };
-    this.openModal = this.openModal.bind(this);
-    this.toggleModal = this.toggleModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
   }
 
-  toggleModal() {
+  toggleModal = () => {
     if (this.state.modalIsOpen) {
       this.setState({ modalIsOpen: false });
     } else {
@@ -21,11 +19,11 @@ class UserProfileEditModal extends React.Component {
     }
   }
 
-  openModal() {
+  openModal = () => {
     this.setState({ modalIsOpen: true });
   }
 
-  closeModal() {
+  closeModal = () => {
     this.setState({ modalIsOpen: false });
   }
 

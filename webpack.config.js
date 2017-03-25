@@ -4,10 +4,10 @@ module.exports = {
   entry: './frontend/entry.jsx',
   output: {
     path: path.join(__dirname, 'app', 'assets', 'javascripts'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
   },
   module: {
     loaders: [
@@ -16,10 +16,10 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel',
         query: {
-          presets: ['react', 'es2015']
-        }
-      }
-    ]
+          presets: ['react', 'es2015', 'stage-0'],
+        },
+      },
+    ],
   },
-  devtool: 'source-maps'
+  devtool: 'source-maps',
 };

@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router';
 
 import SettingsModal from '../modals/settings_modal';
 import SearchBar from '../search/search_bar';
 
-
-class Header extends React.Component {
+class Header extends Component {
 
   loggedoutForm() {
     return (

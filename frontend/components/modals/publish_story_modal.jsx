@@ -8,12 +8,9 @@ class PublishStoryModal extends React.Component {
     this.state = {
       modalIsOpen: false,
     };
-    this.openModal = this.openModal.bind(this);
-    this.toggleModal = this.toggleModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
   }
 
-  toggleModal() {
+  toggleModal = () => {
     if (this.state.modalIsOpen) {
       this.setState({ modalIsOpen: false });
     } else {
@@ -21,10 +18,11 @@ class PublishStoryModal extends React.Component {
     }
   }
 
-  openModal() {
+  openModal = () => {
     this.setState({ modalIsOpen: true });
   }
-  closeModal() {
+
+  closeModal = () => {
     this.setState({ modalIsOpen: false });
   }
 

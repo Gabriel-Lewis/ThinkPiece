@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router';
 
-class SessionForm extends React.Component {
+class SessionForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,11 +11,10 @@ class SessionForm extends React.Component {
       formType: 'signIn',
     };
     this.toggleFormType = this.toggleFormType.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.guestLoginIn = this.guestLoginIn.bind(this);
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     const user = this.state;
     if (this.state.formType === 'signIn') {
@@ -33,7 +32,7 @@ class SessionForm extends React.Component {
     });
   }
 
-  toggleFormType() {
+  toggleFormType = () => {
     if (this.state.formType === 'signIn') {
       this.setState({ formType: 'signUp' });
     } else {
@@ -41,7 +40,7 @@ class SessionForm extends React.Component {
     }
   }
 
-  guestLoginIn() {
+  guestLoginIn = () => {
     const user = { username: 'guest', password: 'password' };
     this.props.login({ user });
     this.props.close();

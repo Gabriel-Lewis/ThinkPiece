@@ -1,19 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Modal from 'react-modal';
 import { Link } from 'react-router';
 
-class SettingsModal extends React.Component {
+class SettingsModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
       modalIsOpen: false,
     };
-    this.openModal = this.openModal.bind(this);
-    this.toggleModal = this.toggleModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
   }
 
-  toggleModal() {
+  toggleModal = () => {
     if (this.state.modalIsOpen) {
       this.setState({ modalIsOpen: false });
     } else {
@@ -21,10 +18,10 @@ class SettingsModal extends React.Component {
     }
   }
 
-  openModal() {
+  openModal = () => {
     this.setState({ modalIsOpen: true });
   }
-  closeModal() {
+  closeModal = () => {
     this.setState({ modalIsOpen: false });
   }
 

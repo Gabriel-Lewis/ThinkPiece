@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchStory, updateStory, deleteStory } from '../../actions/story_actions';
+
 import StoryForm from './story_form';
 
 const mapStateToProps = (state, ownProps) => {

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import Modal from 'react-modal';
+
 import SessionFormContainer from '../session_form/session_form_container';
 
 const signInModal = ({ isOpen, close }) => (
@@ -20,5 +21,10 @@ const signInModal = ({ isOpen, close }) => (
     >×</button>
   </Modal>
   );
+
+signInModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  close: PropTypes.func,
+};
 
 export default signInModal;

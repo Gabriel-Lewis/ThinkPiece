@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
+
 import { searchStories } from '../../util/story_api_util';
 import { searchUsers } from '../../util/user_api_util';
 import SearchResults from './search_results';
 
-export default class SearchBar extends React.Component {
+export default class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,15 +14,9 @@ export default class SearchBar extends React.Component {
       hidden: 'hidden',
       show: '',
     };
-    this.selectName = this.selectName.bind(this);
-    this.updateResults = this.updateResults.bind(this);
-    this.updateUserResults = this.updateUserResults.bind(this);
-    this.clearInput = this.clearInput.bind(this);
-    this.focusOnSearchInput = this.focusOnSearchInput.bind(this);
-    this.hideSearchInput = this.hideSearchInput.bind(this);
   }
 
-  selectName(event) {
+  selectName = (event) => {
     const name = event.currentTarget.value;
     this.setState({ inputVal: name });
     if (event.currentTarget.value !== '') {
@@ -33,32 +28,32 @@ export default class SearchBar extends React.Component {
     }
   }
 
-  updateResults(data) {
+  updateResults = (data) => {
     this.setState({
       searchResults: data,
     });
   }
 
-  updateUserResults(data) {
+  updateUserResults = (data) => {
     this.setState({
       userSearchResults: data,
     });
   }
 
-  clearInput() {
+  clearInput = () => {
     this.setState({
       inputVal: '',
       hidden: 'hidden',
     });
   }
 
-  hideSearchInput() {
+  hideSearchInput = () => {
     this.setState({
       show: '',
     });
   }
 
-  focusOnSearchInput() {
+  focusOnSearchInput = () => {
     if (this.state.show === '') {
       this.setState({ show: 'show' });
     } else {

@@ -1,23 +1,23 @@
-var webpack = require("webpack");
+const webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
-  entry: "./frontend/entry.jsx",
+  entry: './frontend/entry.jsx',
   output: {
-    path: "./app/assets/javascripts",
-    filename: "bundle.js"
+    path: './app/assets/javascripts',
+    filename: 'bundle.js',
   },
-  plugins:[
+  plugins: [
     new webpack.DefinePlugin({
-      'process.env':{
-        'NODE_ENV': JSON.stringify('production')
-      }
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
     }),
     new webpack.optimize.UglifyJsPlugin({
-      compress:{
-        warnings: true
-      }
-    })
+      compress: {
+        warnings: true,
+      },
+    }),
   ],
   module: {
     loaders: [
@@ -26,13 +26,13 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel',
         query: {
-          presets: ['react', 'es2015']
-        }
-      }
-    ]
+          presets: ['react', 'es2015'],
+        },
+      },
+    ],
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ["", ".js", ".jsx"]
-  }
+    extensions: ['', '.js', '.jsx'],
+  },
 };

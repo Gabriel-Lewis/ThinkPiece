@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import { convertToRaw } from 'draft-js';
 import { Editor, createEditorState } from 'medium-draft';
+
 import CustomImageSideButton from './shared/custom_image_side_button';
 import StoryHeader from './story_header';
 
-class StoryForm extends React.Component {
+class StoryForm extends Component {
 
   constructor(props) {
     super(props);
@@ -14,10 +15,6 @@ class StoryForm extends React.Component {
       title: 'Image',
       component: CustomImageSideButton,
     }];
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
-    this.setMainImg = this.setMainImg.bind(this);
-    this.setBody = this.setBody.bind(this);
     this.state = {
       editorState: createEditorState(),
       editorEnabled: true,
@@ -46,27 +43,26 @@ class StoryForm extends React.Component {
     });
   }
 
-  setBody() {
-    const body = JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()));
-    this.setState({ body });
-  }
-
-
-  handleDelete() {
-    this.props.deleteStory(this.props.story.id);
-  }
-
   update(field) {
     return (e) => {
       this.setState({ [field]: e.target.value });
     };
+  };
+
+  setBody = () => {
+    const body = JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()));
+    this.setState({ body });
   }
 
-  setMainImg(url) {
+  handleDelete = () => {
+    this.props.deleteStory(this.props.story.id);
+  }
+
+  setMainImg = (url) => {
     this.setState({ main_image_url: url });
-  }
+  };
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     const body = JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()));
     this.props.updateStory({
@@ -78,7 +74,6 @@ class StoryForm extends React.Component {
     },
     );
   }
-
 
   render() {
     const { editorState } = this.state;

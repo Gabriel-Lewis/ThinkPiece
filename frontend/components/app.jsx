@@ -1,18 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import HeaderContainer from './header/header_container';
 import SignInModal from './modals/sigin_modal';
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       modalOpen: false,
     };
-    this.onModalOpen = this.onModalOpen.bind(this);
-    this.handleLogout = this.handleLogout.bind(this);
-    this.onModalClose = this.onModalClose.bind(this);
   }
 
   getChildContext() {
@@ -23,15 +20,15 @@ class App extends React.Component {
     };
   }
 
-  onModalOpen() {
+  onModalOpen = () => {
     this.setState({ modalOpen: true });
   }
 
-  onModalClose() {
+  onModalClose = () => {
     this.setState({ modalOpen: false });
   }
 
-  handleLogout() {
+  handleLogout = () => {
     this.props.logout();
   }
 
