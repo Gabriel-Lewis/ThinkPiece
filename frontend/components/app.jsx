@@ -51,13 +51,6 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-  currentUser: React.PropTypes.shape.isRequired,
-  location: React.PropTypes.shape.isRequired,
-  children: React.PropTypes.element.isRequired,
-  logout: React.PropTypes.func.isRequired,
-};
-
 App.childContextTypes = {
   isOpen: React.PropTypes.bool,
   open: React.PropTypes.func,

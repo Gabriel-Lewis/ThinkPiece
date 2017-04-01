@@ -8,7 +8,6 @@ const _nullUser = Object.freeze({
   id: 0,
 });
 
-
 const UserReducer = (oldState = _nullUser, action) => {
   switch (action.type) {
     case RECEIVE_USER:

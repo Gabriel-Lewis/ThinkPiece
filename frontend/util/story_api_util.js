@@ -1,55 +1,48 @@
-export const createStory = (story, success) => {
+export const createStory = story => (
   $.ajax({
     url: '/api/stories',
     method: 'POST',
     data: { story },
-    success,
-  });
-};
+  })
+);
 
-export const updateStory = (story, success) => {
+export const updateStory = story => (
   $.ajax({
     url: `/api/stories/${story.id}`,
     method: 'PATCH',
     data: { story },
-    success,
-  });
-};
+  })
+);
 
-export const deleteStory = (id, success) => {
+export const deleteStory = id => (
   $.ajax({
     url: `/api/stories/${id}`,
     method: 'DELETE',
-    success,
-  });
-};
+  })
+);
 
-export const fetchStory = (id, success) => {
+export const fetchStory = id => (
   $.ajax({
     url: `/api/stories/${id}`,
-    success,
-  });
-};
+  })
+);
 
-export const fetchStories = (success) => {
+export const fetchStories = () => (
   $.ajax({
     url: '/api/stories',
-    success,
-  });
-};
+  })
+);
 
-export const fetchUsersStories = (username, success) => {
+export const fetchUsersStories = username => (
   $.ajax({
     url: '/api/stories',
     data: { username },
-    success,
-  });
-};
+  })
+);
 
-export const searchStories = (query, success) => {
+export const searchStories = query => (
   $.ajax({
     url: '/api/stories/search',
     data: { search: query },
-    success,
-  });
-};
+  })
+);

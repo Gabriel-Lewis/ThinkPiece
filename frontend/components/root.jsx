@@ -52,8 +52,4 @@ const Root = ({ store }) => {
   );
 };
 
-Root.propTypes = {
-  store: React.PropTypes.shape.isRequired,
-};
-
 export default Root;
