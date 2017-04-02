@@ -14,7 +14,7 @@
     "airbnb"
   ],
   "rules": {
-    "no-console": 0,
+    "no-console": 1,
     "eqeqeq": 1,
     "no-unused-vars": 1,
     "import/no-unresolved": 0,

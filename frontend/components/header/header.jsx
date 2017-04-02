@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link, withRouter } from 'react-router';
 
 import SettingsModal from '../modals/settings_modal';
@@ -44,5 +44,12 @@ class Header extends Component {
     return this.loggedoutForm();
   }
 }
+
+Header.propTypes = {
+  loggedIn: PropTypes.bool.isRequired,
+  open: PropTypes.func,
+  logout: PropTypes.func,
+  currentUser: PropTypes.object,
+};
 
 export default withRouter(Header);
