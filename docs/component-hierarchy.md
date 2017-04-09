@@ -48,10 +48,6 @@
 | "/sign-in" | "AuthFormContainer" |
 | "/" | "App" |
 | "/stories/:storyId" | "StoryContainer" |
-| "/search-results" | "SearchResultsContainer"
 | "/new-story" | "NewStoryContainer" |
 | "/new-comment" | "NewCommentContainer" |
-| "/search" | "Search" |
 | "stories/:story_id/new-topic" | "NewTopic" |
-| "/topic-search" | "TopicSearch" |
-| "/user-search" | "UserSearch" |
