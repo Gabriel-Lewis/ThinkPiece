@@ -8,6 +8,8 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [
+    'transform-decorators-legacy',
+    'transform-class-properties',
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
