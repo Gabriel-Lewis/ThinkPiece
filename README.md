@@ -32,7 +32,7 @@ Users can create, edit, and share their own stories, or read the stories of othe
 
 **With Rich Text Editing users can style their stories to their liking.**
 
-One of Medium's best features is it's easy to use text editor. Using the [Medium Drafts](https://github.com/brijeshb42/medium-draft) node package, Thinkpiece recreates this experience. Users can embolden, italize, highlight, add links, and more. Users can also use the keybindings they are familiar with to style their story. For example a user can highlight text and embolden it by pressing CMD-B.
+One of Medium's best features is it's easy to use text editor. Using the [Medium Drafts](https://github.com/brijeshb42/medium-draft) node package, Thinkpiece recreates this experience. Users can embolden, italicize, highlight, add links, and more. Users can also use the keybindings they are familiar with to style their story. For example a user can highlight text and embolden it by pressing CMD-B.
 
 ### Image Upload
 
@@ -40,7 +40,7 @@ One of Medium's best features is it's easy to use text editor. Using the [Medium
 
 **A Picture is worth a thousand words**
 
-Users can easily upload images in their story. The file input's success calls an ajax request to store the image on imgur.
+Users can easily upload images in their story. The file input's success calls an ajax request to store the image on Imgur.
 
 ## Technical Details
 
