@@ -5,20 +5,20 @@ import { fetchUsersStories } from '../../actions/story_actions';
 
 import UserProfile from './user_profile';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ user, session, stories }) => {
   let following;
-  const currentUser = state.session.currentUser;
-  if (state.session.currentUser) {
-    following = state.user.followers.map(user => user.id).includes(currentUser.id);
+  const currentUser = session.currentUser;
+  if (session.currentUser) {
+    following = user.followers.map(_user => _user.id).includes(currentUser.id);
   }
 
   return ({
     currentUser,
-    user: state.user,
+    user,
     following,
-    followerCount: state.user.followers,
-    followingCount: state.user.following,
-    stories: Object.keys(state.stories).map(id => state.stories[id]),
+    followerCount: user.followers,
+    followingCount: user.following,
+    stories: Object.keys(stories).map(id => stories[id]),
   });
 };
 

@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import App from './app';
 import { logout } from '../actions/session_actions';
 
-const mapStateToProps = state => ({
-  loggedIn: Boolean(state.session.currentUser),
-  currentUser: state.session.currentUser,
+const mapStateToProps = ({ session }) => ({
+  loggedIn: Boolean(session.currentUser),
+  currentUser: session.currentUser,
 });
 
 const mapDispatchToProps = dispatch => ({
