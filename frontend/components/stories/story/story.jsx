@@ -15,11 +15,7 @@ class Story extends React.Component {
       editorEnabled: false,
       modalOpen: false,
     };
-    this.story = this.props.story;
-    this.editLinkForAuthor = this.editLinkForAuthor.bind(this);
-    this.handleLike = this.handleLike.bind(this);
-    this.handleUnlike = this.handleUnlike.bind(this);
-    this.onModalOpen = this.onModalOpen.bind(this);
+
     this.onChange = (editorState, callback = null) => {
       if (this.state.editorEnabled) {
         this.setState({ editorState }, () => {
@@ -37,41 +33,43 @@ class Story extends React.Component {
     });
   }
 
-  onModalOpen() {
+  onModalOpen = () => {
     this.setState({ modalOpen: true });
   }
 
-  handleUnlike() {
-    const id = this.props.story.id;
-    this.props.deleteLike(id);
+  handleUnlike = () => {
+    const { story, deleteLike } = this.props;
+    deleteLike(story.id);
   }
 
-  handleLike() {
-    const id = this.props.story.id;
-    this.props.createLike(id);
+  handleLike = () => {
+    const { story, createLike } = this.props;
+    createLike(story.id);
   }
 
-  editLinkForAuthor() {
-    if (this.props.story !== {} && this.props.currentUser) {
-      if (this.props.story.user.id === this.props.currentUser.id) {
+  editLinkForAuthor = () => {
+    const { story, currentUser } = this.props;
+    if (story !== {} && currentUser) {
+      if (story.user.id === currentUser.id) {
         return (
           <div className="story-options">
-            <Link to={`/stories/${this.props.story.id}/edit`}>Edit</Link>
+            <Link to={`/stories/${story.id}/edit`}>Edit</Link>
           </div>
         );
       }
     }
-    return (<div />);
+    return null
   }
 
-  storyLikeButton() {
-    if (this.props.currentUser) {
+  storyLikeButton = () => {
+    const { currentUser, story } = this.props;
+    if (currentUser) {
       return (
         <StoryDetails
           unlike={this.handleUnlike}
           like={this.handleLike}
-          liked={this.props.story.liked}
-          likeCount={this.props.story.likeCount}
+          liked={story.liked}
+          likeCount={story.likeCount}
         />
       );
     }
@@ -81,7 +79,7 @@ class Story extends React.Component {
           <button onClick={this.onModalOpen}>
             <img className="heart" src="http://i.imgur.com/6XPFTeT.png" />
           </button>
-          <p>{this.props.story.likeCount}</p>
+          <p>{story.likeCount}</p>
           <SessionFormModal
             isOpen={this.state.modalOpen}
           />
@@ -92,7 +90,7 @@ class Story extends React.Component {
 
   render() {
     const { editorState } = this.state;
-    const story = this.props.story;
+    const { story } = this.props;
 
     if (!story || story === {}) {
       return (<div className="cp-spinner cp-heart" />);
@@ -117,6 +115,7 @@ class Story extends React.Component {
           className="story-title"
         >{story.title}</h3>
         <Editor
+          placeholder="Loading..."
           editorState={editorState}
           onChange={this.onChange}
         />

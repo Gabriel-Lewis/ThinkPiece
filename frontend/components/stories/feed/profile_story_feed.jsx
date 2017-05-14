@@ -1,31 +1,25 @@
 import React from 'react';
-import { withRouter } from 'react-router';
 
 import StoryFeedItem from './story_feed_item';
 
-class ProfileStoryFeed extends React.Component {
-
-  render() {
-    return (
-
-      <div className="profile-background">
-        <ul className="story-feed">
-          {
-            this.props.stories.map(story => (
-              <StoryFeedItem
-                key={story.id}
-                user={this.props.user}
-                story={story}
-                currentUser={this.props.currentUser}
-                createLike={this.props.createLike}
-                deleteLike={this.props.deleteLike}
-              />
-            ))
+const ProfileStoryFeed = ({ user, stories, currentUser, deleteLike, createLike }) => (
+  <div className="profile-background">
+    <ul className="story-feed">
+      {
+        stories.map(story => (
+          <StoryFeedItem
+            key={story.id}
+            user={user}
+            story={story}
+            currentUser={currentUser}
+            createLike={createLike}
+            deleteLike={deleteLike}
+          />
+        ))
           }
-        </ul>
-      </div>
-    );
-  }
-}
+    </ul>
+  </div>
+);
 
-export default withRouter(ProfileStoryFeed);
+
+export default ProfileStoryFeed;

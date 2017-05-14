@@ -11,11 +11,13 @@ class UserProfile extends Component {
   }
 
   handleFollow = () => {
-    this.props.follow(this.props.user.id);
+    const { follow, user} = this.props;
+    follow(user.id);
   }
 
   handleUnfollow = () => {
-    this.props.unfollow(this.props.user.id);
+    const { unfollow, user } = this.props;
+    unfollow(user.id);
   }
 
   unfollowButton = () => (
@@ -66,10 +68,6 @@ class UserProfile extends Component {
 
   render() {
     const user = this.props.user;
-
-    if (user.id === 0) {
-      return (<ErrorMessage />);
-    }
 
     return (
       <div>
