@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Editor, createEditorState, } from 'medium-draft';
 
 import { convertToRaw } from 'draft-js';
 import CustomImageSideButton from './shared/custom_image_side_button';
 import StoryHeader from './story_header';
 
-class NewStory extends React.Component {
+class NewStory extends Component {
 
   constructor(props) {
     super(props);
@@ -22,20 +22,10 @@ class NewStory extends React.Component {
       body: '',
       main_image_url: '',
     };
-
-    this.onChange = (editorState, callback = null) => {
-      if (this.state.editorEnabled) {
-        this.setState({ editorState }, () => {
-          if (callback) {
-            callback();
-          }
-        });
-      }
-    };
   }
 
   componentDidMount() {
-    this.refs.editor.focus();
+    this.refs.title.focus();
   }
 
   update(field) {
@@ -45,25 +35,25 @@ class NewStory extends React.Component {
   }
 
   publishStory = () => {
-    const body = JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()));
-    this.props.createStory({
-      title: this.state.title,
-      body,
-      userId: this.props.currentUser.id,
-      main_image_url: this.state.main_image_url });
+    const { title, editorState, main_image_url } = this.state;
+    const userId = this.props.currentUser.id;
+    const body = JSON.stringify(convertToRaw(editorState.getCurrentContent()));
+    this.props.createStory({ title, body, userId, main_image_url });
   }
 
-  setMainImg = url => {
-    this.setState({ main_image_url: url });
+  setMainImg = (main_image_url) => {
+    this.setState({ main_image_url });
   }
 
   render() {
     const { editorState } = this.state;
+    const { currentUser, logout } = this.props;
     return (
       <div>
         <StoryHeader
           submitStory={this.publishStory}
-          currentUser={this.props.currentUser}
+          logout={logout}
+          currentUser={currentUser}
           setMainImg={this.setMainImg}
           pageType="new"
         />
@@ -71,13 +61,13 @@ class NewStory extends React.Component {
           <input
             className="new-story-title"
             placeholder="Title"
+            ref="title"
             type="text"
             onChange={this.update('title')}
           />
           <Editor
-            ref="editor"
             editorState={editorState}
-            onChange={this.onChange}
+            onChange={(editorState) => this.setState({ editorState })}
             sideButtons={this.sideButtons}
             placeholder="Tell your story..."
           />

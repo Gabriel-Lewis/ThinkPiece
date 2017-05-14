@@ -15,14 +15,15 @@ class SessionForm extends Component {
   }
 
   handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault
+    const { login, close, signup} = this.props
     const user = this.state;
     if (this.state.formType === 'signIn') {
-      this.props.login({ user });
-      this.props.close();
+      login({ user });
+      close();
     } else {
-      this.props.signup({ user });
-      this.props.close();
+      signup({ user });
+      close();
     }
   }
 
@@ -41,9 +42,10 @@ class SessionForm extends Component {
   }
 
   guestLoginIn = () => {
+    const { login, close } = this.props
     const user = { username: 'guest', password: 'password' };
-    this.props.login({ user });
-    this.props.close();
+    login({ user });
+    close();
   }
 
   guestLoginInButton() {
@@ -61,7 +63,6 @@ class SessionForm extends Component {
         <div className="modal-title">
           <h3 className="logo">Thinkpiece</h3>
         </div>
-
         <div className="modal-form">
           <h3>Sign In</h3>
           {this.renderErrors()}

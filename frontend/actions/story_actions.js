@@ -37,7 +37,7 @@ export const createStory = story => dispatch => APIUtil.createStory(story)
 export const updateStory = story => dispatch => APIUtil.updateStory(story)
   .then(res => dispatch(receiveStory(res)));
 
-// export const deleteStory = id => dispatch => APIUtil.deleteStory(id);
+export const deleteStory = id => dispatch => APIUtil.deleteStory(id);
 
 export const fetchUsersStories = username => dispatch => APIUtil.fetchUsersStories(username)
   .then(stories => dispatch(receiveAllStories(stories)));

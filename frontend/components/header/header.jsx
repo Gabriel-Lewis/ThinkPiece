@@ -25,7 +25,12 @@ class Header extends Component {
         <nav>
           <Link to="/"><h3 className="logo">Thinkpiece</h3></Link>
           <div className="header-settings">
-            <Link className="medium-green-button" to="/new-story">Write a story</Link>
+            <Link
+              className="medium-green-button"
+              to="/new-story"
+            >
+              Write a story
+            </Link>
             <SearchBar />
             <SettingsModal
               handleLogout={this.props.logout}

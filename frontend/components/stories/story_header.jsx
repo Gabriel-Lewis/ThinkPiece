@@ -6,11 +6,11 @@ import SettingsModal from '../modals/settings_modal';
 
 class storyHeader extends React.Component {
 
-  handleLogout = () => {
+  handleLogout() {
     this.props.logout();
   }
 
-  deleteButton = () => {
+  deleteButton() {
     if (this.props.deleteStory) {
       return (<button onClick={this.props.deleteStory}>Delete</button>);
     }
@@ -44,11 +44,11 @@ class storyHeader extends React.Component {
 }
 
 storyHeader.propTypes = {
-  currentUser: React.PropTypes.shape.isRequired,
-  logout: React.PropTypes.func.isRequired,
-  submitStory: React.PropTypes.func.isRequired,
-  deleteStory: React.PropTypes.func.isRequired,
-  setMainImg: React.PropTypes.func.isRequired,
+  currentUser: React.PropTypes.object,
+  logout: React.PropTypes.func,
+  submitStory: React.PropTypes.func,
+  deleteStory: React.PropTypes.func,
+  setMainImg: React.PropTypes.func,
 };
 
 export default storyHeader;

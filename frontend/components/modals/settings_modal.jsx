@@ -10,14 +10,6 @@ class SettingsModal extends Component {
     };
   }
 
-  toggleModal = () => {
-    if (this.state.modalIsOpen) {
-      this.setState({ modalIsOpen: false });
-    } else {
-      this.setState({ modalIsOpen: true });
-    }
-  }
-
   openModal = () => {
     this.setState({ modalIsOpen: true });
   }
@@ -26,33 +18,38 @@ class SettingsModal extends Component {
   }
 
   render() {
+    const { currentUser, handleLogout } = this.props
+    const { modalIsOpen } = this.state
+    const { username, profile_image_url } = currentUser
     return (
       <div>
         <img
-          alt={this.props.currentUser.username}
+          alt={username}
           className="feed-profile-image user-image"
-          src={this.props.currentUser.profile_image_url}
+          src={profile_image_url}
           onClick={this.openModal}
         />
         <Modal
           className="settings-modal"
           overlayClassName="no-overlay"
-          isOpen={this.state.modalIsOpen}
+          isOpen={modalIsOpen}
           onRequestClose={this.closeModal}
           contentLabel="Settings Modal"
         >
           <ul>
-            <li><Link className="" to="/new-story">New Story</Link></li>
-            <li><Link
-              to={`/users/${this.props.currentUser.username}`}
-            >
-              Profile
-            </Link></li>
-            <li><button
-              onClick={this.props.handleLogout}
-            >
-              Logout
-            </button></li>
+            <li>
+              <Link to="/new-story">
+                New Story
+              </Link>
+            </li>
+            <li>
+              <Link to={`/users/${username}`}>
+                Profile
+              </Link>
+            </li>
+            <li>
+              <button onClick={handleLogout}>Logout</button>
+            </li>
           </ul>
         </Modal>
       </div>

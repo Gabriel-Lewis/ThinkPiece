@@ -10,14 +10,6 @@ class PublishStoryModal extends React.Component {
     };
   }
 
-  toggleModal = () => {
-    if (this.state.modalIsOpen) {
-      this.setState({ modalIsOpen: false });
-    } else {
-      this.setState({ modalIsOpen: true });
-    }
-  }
-
   openModal = () => {
     this.setState({ modalIsOpen: true });
   }

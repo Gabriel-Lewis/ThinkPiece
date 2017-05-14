@@ -1,25 +1,43 @@
-.modal-close {
-  font-family: "Helvetica Neue",sans-serif;
-  font-weight: 300;
-  font-size: 32px;
-  background-color: transparent;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 10px 20px;
-  right: 0;
-  top: 0;
-  font-style: normal;
-  position: fixed;
-}
+.modal {
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.44);
+    padding: 0;
+    vertical-align   : middle;
+    min-height: 580px;
+    border          : none;
+    background-color : white;
+    padding         : 0;
+    overflow: hidden;
 
-.modal-title {
-  background-color: $light-gray;
-  text-align: center;
+  &-close {
+    font-family: "Helvetica Neue",sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    right: 0;
+    top: 0;
+    font-style: normal;
+    position: fixed;
+  }
 
-  top:0px;
-  padding: 20px;
-  font-family: "Helvetica Neue",sans-serif;
+  &-title {
+    background-color: $light-gray;
+    text-align: center;
+    top:0px;
+    padding: 20px;
+    font-family: "Helvetica Neue",sans-serif;
+  }
+
+  &-form {
+    padding:0 32px 0;
+    font-family: "Helvetica Neue",sans-serif;
+  }
 }
 
 .form-inputs {
@@ -46,10 +64,6 @@
   border-bottom: 1px solid rgba(0,0,0,.15);
   border-radius: 0;
 }
-.modal-form {
-  padding:0 32px 0;
-  font-family: "Helvetica Neue",sans-serif;
-}
 
 .sign-in-button {
   border: 1px solid $medium-green;
@@ -58,30 +72,24 @@
   width: 90%;
   margin: 10px auto;
   border-radius: 3px;
-}
-.sign-in-button:hover {
-  background-color: $light-gray;
+
+  &:hover {
+    background-color: $light-gray;
+  }
 }
 
 .session-form-toggle {
   color: rgba(0,0,0,.44);
   cursor: pointer;
-}
-.session-form-toggle:hover {
-  text-decoration: underline;
-  color: $overlay-gray;
+
+  &:hover {
+    text-decoration: underline;
+    color: $overlay-gray;
+  }
 }
 
 .form-errors {
   color: red;
-}
-
-.overlay:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    margin-right: -.25em;
 }
 
 .overlay {
@@ -99,22 +107,15 @@
     margin: 0;
     border: 0;
     background-color : rgba(0,0,0,.6);
-}
 
-.modal {
-    display: inline-block;
-    background-color: #fff;
-    border-radius: 3px;
-    box-shadow: 0 2px 6px 0 rgba(0,0,0,.44);
-    padding: 0;
-    vertical-align   : middle;
-    min-height: 580px;
-    border          : none;
-    background-color : white;
-    padding         : 0;
-    overflow: hidden;
+    &::before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -.25em;
+    }
 }
-
 
 .publish-modal {
   display: inline-block;
@@ -159,10 +160,6 @@
   line-height: 35px;
   font-family: "avenir";
   font-weight: 400;
-}
-
-.img-upload-form input {
-
 }
 
 .user-profile-form input {
@@ -225,17 +222,17 @@
 }
 
 .settings-modal::after {
-  content: '';
-    display: block;
-    position: absolute;
-    left: 50%;
-    background: white;
-    top: -14px;
-    width: 14px;
-    height: 14px;
-    transform: rotate(45deg) translate(6px,6px);
-    box-shadow: -1px -1px 1px -1px rgba(0,0,0,.44);
-}
+    content: '';
+      display: block;
+      position: absolute;
+      left: 50%;
+      background: white;
+      top: -14px;
+      width: 14px;
+      height: 14px;
+      transform: rotate(45deg) translate(6px,6px);
+      box-shadow: -1px -1px 1px -1px rgba(0,0,0,.44);
+  }
 
 .settings-modal ul li {
   padding: 7px 25px;
