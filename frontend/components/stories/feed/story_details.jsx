@@ -12,18 +12,9 @@ const unlikeButton = unlike => (
   </button>
 );
 
-export default ({ liked, likeCount, unlike, like, user }) => {
-  if (liked) {
-    return (
-      <div className="story-like-details">
-        {unlikeButton(unlike)}
-        <p>{likeCount}</p>
-      </div>);
-  }
-  return (
-    <div className="story-like-details">
-      {likeButton(like)}
-      <p>{likeCount}</p>
-    </div>
+export default ({ liked, likeCount, unlike, like, user, viewCount }) => (
+  <div className="story-like-details">
+    {liked ? unlikeButton(unlike) : likeButton(like)}
+    <p>{likeCount} • {viewCount} views</p>
+  </div>
   );
-};

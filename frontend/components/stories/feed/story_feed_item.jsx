@@ -25,7 +25,7 @@ class StoryFeedItem extends React.Component {
 
   storyLikeDetails() {
     const { currentUser, open, story, handleUnlike, handleLike } = this.props;
-    const { likeCount, liked } = story;
+    const { view_count, likeCount, liked } = story;
     if (!currentUser) {
       return (
         <div className="story-like-details">
@@ -35,7 +35,7 @@ class StoryFeedItem extends React.Component {
               className="heart"
               src="http://i.imgur.com/6XPFTeT.png" />
           </button>
-          <p>{likeCount}</p>
+          <p>{likeCount} • {view_count} views</p>
         </div>
       );
     }
@@ -46,6 +46,7 @@ class StoryFeedItem extends React.Component {
         like={this.handleLike}
         liked={liked}
         likeCount={likeCount}
+        viewCount={view_count}
       />
     );
   }

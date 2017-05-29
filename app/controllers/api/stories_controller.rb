@@ -14,6 +14,7 @@ class Api::StoriesController < ApplicationController
 
   def show
     @story = Story.find(params[:id])
+    @story.update_attributes(view_count: @story.view_count + 1)
     @author = User.find(@story.user_id)
     render "api/stories/show"
   end

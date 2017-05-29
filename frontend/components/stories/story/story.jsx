@@ -114,6 +114,10 @@ class Story extends React.Component {
         <h3
           className="story-title"
         >{story.title}</h3>
+        <p
+          className="story-view-count">
+          {story.view_count} views
+        </p>
         <Editor
           placeholder="Loading..."
           editorState={editorState}
